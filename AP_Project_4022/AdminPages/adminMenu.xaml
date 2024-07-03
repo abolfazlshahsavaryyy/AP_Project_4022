@@ -1,0 +1,33 @@
+﻿<Window x:Class="AP_Project_4022.AdminPages.adminMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AP_Project_4022.AdminPages"
+        mc:Ignorable="d"
+        Title="adminMenu" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Admin " FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Gray"/>
+        <TextBlock Grid.Column="1" Text="Menu" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Gray"/>
+
+        <Button x:Name="btnAddRestaurant" Content="Add Restaurant" Grid.Row="1" Margin="80, 40, 80, 40" FontSize="18" Click="btnAddRestaurant_Click" />
+        <Button x:Name="btnSearchRestaurant" Content="Search Among Restaurants" Grid.Row="1" Grid.Column="1" Margin="80, 40, 80, 40" FontSize="18" Click="btnSearchRestaurant_Click" />
+        <Button x:Name="btnSearchComplaint" Content="Search Among Complaints" Grid.Row="2" Margin="80, 40, 80, 40" FontSize="18" Click="btnSearchComplaint_Click" />
+        <Button x:Name="btnShowUncheckedComplaints" Content="Show Unchecked Complaints" Grid.Row="2" Grid.Column="1" Margin="80, 40, 80, 40" FontSize="18" Click="btnShowUncheckedComplaints_Click" />
+        <Button x:Name="btnAnswerComplaints" Content="Answer Complaint" Grid.Row="3" Margin="80, 40, 80, 40" FontSize="18" Click="btnAnswerComplaints_Click" />
+        <Button x:Name="btnShowAllComplaints" Content="Show All Complaints" Grid.Row="3" Grid.Column="1" Margin="80, 40, 80, 40" FontSize="18" Click="btnShowAllComplaints_Click" />
+
+
+    </Grid>
+</Window>
