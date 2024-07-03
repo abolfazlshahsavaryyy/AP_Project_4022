@@ -24,5 +24,10 @@ namespace AP_Project_4022.AdminPages
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

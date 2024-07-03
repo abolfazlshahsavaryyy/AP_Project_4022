@@ -24,7 +24,7 @@
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Password: " FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right" Name="tbPasswordHint" />
         <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Height="50" Margin="10" Name="txtUsername"/>
         <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Height="50" Margin="10" Name="txtPassword"/>
-        <Button Grid.Row="4" Grid.Column="3" Height="50" Width="100" Content="Add" FontSize="25" VerticalAlignment="Top" HorizontalAlignment="Left" Name="btnAdd"/>
+        <Button Grid.Row="4" Grid.Column="3" Height="50" Width="100" Content="Add" FontSize="25" VerticalAlignment="Top" HorizontalAlignment="Left" Name="btnAdd" Click="btnAdd_Click"/>
 
 
 

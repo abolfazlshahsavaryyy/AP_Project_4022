@@ -20,7 +20,7 @@
             <RadioButton Grid.Row="1" Margin="10" GroupName="SerachBy" Content="Search by complaints" FontSize="15" Name="rdbComplaint" />
         </StackPanel>
 
-        <Button Grid.Row="2" Content="Search" FontSize="20" Width="100" Height="50" VerticalAlignment="Top" HorizontalAlignment="Right" Margin ="0, 0 , 100 ,0"/>
+        <Button Grid.Row="2" Content="Search" FontSize="20" Width="100" Height="50" VerticalAlignment="Top" HorizontalAlignment="Right" Margin ="0, 0 , 100 ,0" Name="btnSearch" Click="btnSearch_Click"/>
 
     </Grid>
 </Window>
