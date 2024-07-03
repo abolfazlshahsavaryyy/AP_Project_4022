@@ -23,5 +23,10 @@ namespace AP_Project_4022.CustomerPage
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

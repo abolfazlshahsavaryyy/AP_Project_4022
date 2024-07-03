@@ -10,12 +10,13 @@
     <Grid>
         <StackPanel HorizontalAlignment="Left" Height="254" Margin="55,83,0,0" VerticalAlignment="Top" Width="308"/>
         <Label Content="            information" FontSize="25" HorizontalAlignment="Left" Height="50" Margin="55,28,0,0" VerticalAlignment="Top" Width="308"/>
-        <Button Content="edit" FontSize="20" HorizontalAlignment="Left" Height="25" Margin="72,368,0,0" VerticalAlignment="Top" Width="274"/>
+        <Button Content="edit" FontSize="20" HorizontalAlignment="Left" Height="25" Margin="72,368,0,0" VerticalAlignment="Top" Width="137"/>
         <Label Visibility="Collapsed" Name="emailLabel" Content="enter new email:" FontSize="20" HorizontalAlignment="Left" Height="42" Margin="477,53,0,0" VerticalAlignment="Top" Width="278"/>
         <Label Visibility="Collapsed" Name="addressLabel" Content="enter address" FontSize="20" HorizontalAlignment="Left" Height="42" Margin="477,168,0,0" VerticalAlignment="Top" Width="278"/>
         <TextBox Visibility="Collapsed" Name="emailTextBox" HorizontalAlignment="Left" FontSize="20" Height="47" Margin="477,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="278"/>
         <TextBox Visibility="Collapsed" Name="addrressTextBox" HorizontalAlignment="Left" FontSize="20" Height="47" Margin="477,217,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="278"/>
         <Button Visibility="Collapsed" Name="changeButton" Content="change" FontSize="20" HorizontalAlignment="Left" Height="43" Margin="512,350,0,0" VerticalAlignment="Top" Width="208"/>
+        <Button Content="special servise" FontSize="15" HorizontalAlignment="Left" Height="25" Margin="239,368,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click"/>
 
     </Grid>
 </Window>
