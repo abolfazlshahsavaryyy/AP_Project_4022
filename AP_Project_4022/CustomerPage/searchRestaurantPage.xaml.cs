@@ -28,5 +28,10 @@ namespace AP_Project_4022.CustomerPage
         {
 
         }
+
+        private void restaurantButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

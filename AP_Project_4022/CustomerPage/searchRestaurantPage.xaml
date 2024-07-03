@@ -8,7 +8,9 @@
         Title="searchRestaurantPage" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="303" Margin="44,90,0,0" VerticalAlignment="Top" Width="474"/>
+        <StackPanel Name="restaurantListStackPanel" HorizontalAlignment="Left" Height="303" Margin="44,90,0,0" VerticalAlignment="Top" Width="474">
+            <Button Name="restaurantButton" Content="restaurant name|city|address|" Height="41" Width="475" Click="restaurantButton_Click" />
+        </StackPanel>
         <Label Content="restaurant list" FontSize="18" HorizontalAlignment="Left" Height="31" Margin="214,35,0,0" VerticalAlignment="Top" Width="166"/>
         <Label Content="city name" FontSize="20" HorizontalAlignment="Left" Height="38" Margin="573,67,0,0" VerticalAlignment="Top" Width="185"/>
         <Label Content="restaurant name" FontSize="20" HorizontalAlignment="Left" Height="38" Margin="573,179,0,0" VerticalAlignment="Top" Width="185"/>
