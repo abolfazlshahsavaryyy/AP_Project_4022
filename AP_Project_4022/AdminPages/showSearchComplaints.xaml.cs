@@ -15,13 +15,15 @@ using System.Windows.Shapes;
 namespace AP_Project_4022.AdminPages
 {
     /// <summary>
-    /// Interaction logic for searchAmmongComplaints.xaml
+    /// Interaction logic for showSearchComplaints.xaml
     /// </summary>
-    public partial class searchAmmongComplaints : Window
+    public partial class showSearchComplaints : Window
     {
-        public searchAmmongComplaints()
+        public showSearchComplaints(string searchBy)
         {
             InitializeComponent();
+            tbTitle.Text = "Search Restaurants by " + searchBy;
+            tbHint.Text = "Enter " + searchBy;
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
