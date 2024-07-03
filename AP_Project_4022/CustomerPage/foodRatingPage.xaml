@@ -1,0 +1,16 @@
+﻿<Window x:Class="AP_Project_4022.CustomerPage.foodRatingPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AP_Project_4022.CustomerPage"
+        mc:Ignorable="d"
+        Title="foodRatingPage" Height="450" Width="800">
+    <Grid>
+        <Label Content="enter rating for food:" FontSize="23" HorizontalAlignment="Left" Height="55" Margin="109,112,0,0" VerticalAlignment="Top" Width="391"/>
+        <TextBox Name="ratingTextBox" FontSize="49" HorizontalAlignment="Left" Height="98" Margin="109,217,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="186"/>
+        <Button Name="submitButton" Content="submit" FontSize="30" HorizontalAlignment="Left" Height="83" Margin="419,217,0,0" VerticalAlignment="Top" Width="122"/>
+        <Button Name="deleteButton" Content="delete" FontSize="30" HorizontalAlignment="Left" Height="83" Margin="616,217,0,0" VerticalAlignment="Top" Width="108"/>
+
+    </Grid>
+</Window>

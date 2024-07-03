@@ -8,7 +8,7 @@
         Title="restaurantMenuPage" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <StackPanel Name="menuStackPanel" HorizontalAlignment="Left" Height="298" Margin="126,86,0,0" VerticalAlignment="Top" Width="526"/>
+        <StackPanel Name="menuStackPanel" HorizontalAlignment="Left" Height="298" Margin="73,86,0,0" VerticalAlignment="Top" Width="643"/>
         <Label Content="menu" FontSize="36" HorizontalAlignment="Left" Height="72" Margin="321,9,0,0" VerticalAlignment="Top" Width="176"/>
 
 
