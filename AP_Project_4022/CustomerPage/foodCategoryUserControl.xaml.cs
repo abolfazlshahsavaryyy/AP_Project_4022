@@ -10,29 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AP_Project_4022.CustomerPage
 {
     /// <summary>
-    /// Interaction logic for searchRestaurantPage.xaml
+    /// Interaction logic for foodCategoryUserControl.xaml
     /// </summary>
-    public partial class searchRestaurantPage : Window
+    public partial class foodCategoryUserControl : UserControl
     {
-        public searchRestaurantPage()
+        public foodCategoryUserControl()
         {
             InitializeComponent();
-        }
-
-        private void filterButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void restaurantButton_Click(object sender, RoutedEventArgs e)
-        {
-            restaurantMenuPage rmp =new restaurantMenuPage();
-            rmp.Show();
         }
     }
 }

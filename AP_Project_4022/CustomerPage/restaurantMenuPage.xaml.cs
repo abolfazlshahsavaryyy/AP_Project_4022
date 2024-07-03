@@ -11,28 +11,26 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AP_Project_4022.CustomerPage;
 
 namespace AP_Project_4022.CustomerPage
 {
     /// <summary>
-    /// Interaction logic for searchRestaurantPage.xaml
+    /// Interaction logic for restaurantMenuPage.xaml
     /// </summary>
-    public partial class searchRestaurantPage : Window
+    public partial class restaurantMenuPage : Window
     {
-        public searchRestaurantPage()
+        public restaurantMenuPage()
         {
             InitializeComponent();
+            AddUserControl();
         }
-
-        private void filterButton_Click(object sender, RoutedEventArgs e)
+        void AddUserControl()
         {
-
+            foodCategoryUserControl fCUC = new foodCategoryUserControl();
+            fCUC.foodListStackPanel.Children.Add(new Button ());
+            menuStackPanel.Children.Add(fCUC);
         }
-
-        private void restaurantButton_Click(object sender, RoutedEventArgs e)
-        {
-            restaurantMenuPage rmp =new restaurantMenuPage();
-            rmp.Show();
-        }
+        
     }
 }

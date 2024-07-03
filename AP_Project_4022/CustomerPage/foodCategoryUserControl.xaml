@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="AP_Project_4022.CustomerPage.foodCategoryUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AP_Project_4022.CustomerPage"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" Width="274">
+    <Grid HorizontalAlignment="Left" Width="264">
+        <Label Content="category" FontSize="25" Name="foodCategoryLabel" HorizontalAlignment="Center" Height="67" Margin="0,10,0,0" VerticalAlignment="Top" Width="244"/>
+        <StackPanel Name="foodListStackPanel" HorizontalAlignment="Center" Height="358" Margin="0,82,0,0" VerticalAlignment="Top" Width="244"/>
+    </Grid>
+</UserControl>
