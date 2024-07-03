@@ -47,5 +47,20 @@ namespace AP_Project_4022.RestaurantPages
         {
 
         }
+
+        private void btnEditFood_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAddFood_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRemoveFood_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
