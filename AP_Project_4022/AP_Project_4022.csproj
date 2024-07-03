@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CustomerPage\" />
     <Folder Include="classes\" />
   </ItemGroup>
 
