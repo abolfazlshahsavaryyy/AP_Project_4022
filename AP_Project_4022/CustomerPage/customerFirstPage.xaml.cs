@@ -32,7 +32,7 @@ namespace AP_Project_4022.CustomerPage
 
         private void searchRestaurantButton_Click(object sender, RoutedEventArgs e)
         {
-
+            searchRestaurantPage search =new searchRestaurantPage();search.Show();
         }
 
         private void orderhistoryButton_Click(object sender, RoutedEventArgs e)
