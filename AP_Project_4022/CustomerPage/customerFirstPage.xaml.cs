@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AP_Project_4022.CustomerPage;
 
 namespace AP_Project_4022.CustomerPage
 {
@@ -26,7 +27,7 @@ namespace AP_Project_4022.CustomerPage
 
         private void profileButton_Click(object sender, RoutedEventArgs e)
         {
-
+            profilePage profilePage = new profilePage();profilePage.Show();
         }
 
         private void searchRestaurantButton_Click(object sender, RoutedEventArgs e)

@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AP_Project_4022.SigninPage;
+using AP_Project_4022.CustomerPage;
 
 namespace AP_Project_4022
 {
@@ -24,7 +25,7 @@ namespace AP_Project_4022
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-
+            customerFirstPage cfp= new customerFirstPage();cfp.Show();
         }
 
         private void SigninButton_Click(object sender, RoutedEventArgs e)
