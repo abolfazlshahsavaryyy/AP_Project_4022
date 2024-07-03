@@ -21,7 +21,7 @@
 
         <Button x:Name="btnChangeMenu" Grid.Row="1" Margin="90, 50, 90, 50" Content="Change Menu" FontSize="25" Click="btnChangeMenu_Click" />
         <Button x:Name="btnChangeStock" Grid.Row="1" Grid.Column="1" Margin="90, 50, 90, 50" Content="Change stock" FontSize="25" Click="btnChangeStock_Click" />
-        <Button x:Name="btnActiveService" Grid.Row="2" Grid.Column="0" Margin="90, 50, 90, 50" Content="Active Service" FontSize="25" Click="btnActiveService_Click" />
+        <Button x:Name="btnActiveService" Grid.Row="2" Grid.Column="0" Margin="90, 50, 90, 50" Content="Active/DeActivate Service" FontSize="18" Click="btnActiveService_Click" />
         <Button x:Name="btnHistory" Grid.Row="2" Grid.Column="1" Margin="90, 50, 90, 50" Content="History" FontSize="25" Click="btnHistory_Click" />
 
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment ="Right" Visibility="Hidden" x:Name ="stcChoose" >
