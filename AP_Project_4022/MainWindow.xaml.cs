@@ -20,5 +20,15 @@ namespace AP_Project_4022
         {
             InitializeComponent();
         }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SigninButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
