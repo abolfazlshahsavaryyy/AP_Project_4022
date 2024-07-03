@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Admin " FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Gray"/>
-        <TextBlock Grid.Column="1" Text="Menu" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Gray"/>
+        <TextBlock Grid.Column="1" Text="Panel" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Gray"/>
 
         <Button x:Name="btnAddRestaurant" Content="Add Restaurant" Grid.Row="1" Margin="80, 40, 80, 40" FontSize="18" Click="btnAddRestaurant_Click" />
         <Button x:Name="btnSearchRestaurant" Content="Search Among Restaurants" Grid.Row="1" Grid.Column="1" Margin="80, 40, 80, 40" FontSize="18" Click="btnSearchRestaurant_Click" />

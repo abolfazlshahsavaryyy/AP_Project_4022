@@ -1,0 +1,29 @@
+﻿<Window x:Class="AP_Project_4022.RestaurantPages.RestaurantPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AP_Project_4022.RestaurantPages"
+        mc:Ignorable="d"
+        Title="RestaurantPanel" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="45*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Restaurant" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20" Foreground="Gray" />
+        <TextBlock Text=" Panel" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="1" FontSize="20" Foreground="Gray" />
+
+        <Button x:Name="btnChangeMenu" Grid.Row="1" Margin="90, 50, 90, 50" Content="Change Menu" FontSize="25" Click="btnChangeMenu_Click" />
+        <Button x:Name="btnChangeStock" Grid.Row="1" Grid.Column="1" Margin="90, 50, 90, 50" Content="Change stock" FontSize="25" Click="btnChangeStock_Click" />
+        <Button x:Name="btnActiveService" Grid.Row="2" Grid.Column="0" Margin="90, 50, 90, 50" Content="Active Service" FontSize="25" Click="btnActiveService_Click" />
+        <Button x:Name="btnHistory" Grid.Row="2" Grid.Column="1" Margin="90, 50, 90, 50" Content="History" FontSize="25" Click="btnHistory_Click" />
+
+
+    </Grid>
+</Window>
