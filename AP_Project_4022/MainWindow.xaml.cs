@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AP_Project_4022.SigninPage;
 
 namespace AP_Project_4022
 {
@@ -28,7 +29,7 @@ namespace AP_Project_4022
 
         private void SigninButton_Click(object sender, RoutedEventArgs e)
         {
-
+            singinPage sp = new singinPage();sp.Show(); 
         }
     }
 }

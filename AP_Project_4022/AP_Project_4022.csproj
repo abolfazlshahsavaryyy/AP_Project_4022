@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Folder Include="CustomerPage\" />
-    <Folder Include="SigninPage\" />
+    <Folder Include="classes\" />
   </ItemGroup>
 
 </Project>
