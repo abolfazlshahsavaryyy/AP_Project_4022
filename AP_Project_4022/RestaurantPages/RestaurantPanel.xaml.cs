@@ -26,7 +26,11 @@ namespace AP_Project_4022.RestaurantPages
 
         private void btnChangeMenu_Click(object sender, RoutedEventArgs e)
         {
-
+            btnActiveService.Visibility = Visibility.Hidden;
+            btnChangeMenu.Visibility = Visibility.Hidden;
+            btnChangeStock.Visibility = Visibility.Hidden; 
+            btnHistory.Visibility = Visibility.Hidden;
+            stcChoose.Visibility = Visibility.Visible;
         }
 
         private void btnChangeStock_Click(object sender, RoutedEventArgs e)
