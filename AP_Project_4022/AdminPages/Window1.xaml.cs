@@ -19,6 +19,7 @@ namespace AP_Project_4022.AdminPages
     /// </summary>
     public partial class Window1 : Window
     {
+        string data;
         public Window1()
         {
             InitializeComponent();
