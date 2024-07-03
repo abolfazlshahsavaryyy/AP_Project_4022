@@ -1,0 +1,28 @@
+﻿<Window x:Class="AP_Project_4022.AdminPages.CheckComplaint"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AP_Project_4022.AdminPages"
+        mc:Ignorable="d"
+        Title="CheckComplaint" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" x:Name="tbTitle" Text="Answer Complaint" FontSize="20" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" x:Name="tbName" Text="Enter title of complaint: " FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBlock Grid.Row="2" x:Name="tbAnswer" Text="Enter Answer: " FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="10" x:Name="txtName" FontSize="20"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="10" x:Name="txtAnswer" FontSize="20"/>
+        <Button x:Name="btnDone" Click="btnDone_Click" Grid.Row="3" Grid.Column="2" Height="50" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Done" FontSize="20" />
+    </Grid>
+</Window>
