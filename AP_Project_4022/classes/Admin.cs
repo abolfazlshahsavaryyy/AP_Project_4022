@@ -13,7 +13,7 @@ namespace AP_Project_4022.classes
         public string UserName { get; set; }
         public string Password { get; set; }
         public static List<Admin> allAdmin=new List<Admin>();
-        public Admin? CurrentAdmin { get; set; }
+        public static Admin? CurrentAdmin { get; set; }
         //########################################################################
 
         public adminMenu admin_Menu { get; set; }
