@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace AP_Project_4022
+namespace AP_Project_4022.CustomerPage
 {
     /// <summary>
     /// Interaction logic for complaintPage.xaml
