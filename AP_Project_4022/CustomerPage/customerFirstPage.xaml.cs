@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using AP_Project_4022.CustomerPage;
+using AP_Project_4022.classes;
 
 namespace AP_Project_4022.CustomerPage
 {
@@ -27,22 +28,26 @@ namespace AP_Project_4022.CustomerPage
 
         private void profileButton_Click(object sender, RoutedEventArgs e)
         {
-            profilePage profilePage = new profilePage();profilePage.Show();
+            Customer.currentCustomer.profile_page=new profilePage();
+            Customer.currentCustomer.profile_page.Show();
         }
 
         private void searchRestaurantButton_Click(object sender, RoutedEventArgs e)
         {
-            searchRestaurantPage search =new searchRestaurantPage();search.Show();
+            Customer.currentCustomer.search_restaurant_page=new searchRestaurantPage();
+            Customer.currentCustomer.search_restaurant_page.Show();
         }
 
         private void orderhistoryButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Customer.currentCustomer.order_history_page=new orderHistoryPage();
+            Customer.currentCustomer.order_history_page.Show();
         }
 
         private void compaintButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Customer.currentCustomer.complaint_page=new complaintPage();
+            Customer.currentCustomer.complaint_page.Show();
         }
     }
 }
