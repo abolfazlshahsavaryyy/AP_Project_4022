@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 namespace AP_Project_4022.CustomerPage
 {
     /// <summary>
-    /// Interaction logic for complaintPage.xaml
+    /// Interaction logic for reservePage.xaml
     /// </summary>
-    public partial class complaintPage : Window
+    public partial class reservePage : Window
     {
-        public complaintPage()
+        public reservePage()
         {
             InitializeComponent();
         }
 
-        private void addComplaintButton_Click(object sender, RoutedEventArgs e)
+        private void reserveButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
