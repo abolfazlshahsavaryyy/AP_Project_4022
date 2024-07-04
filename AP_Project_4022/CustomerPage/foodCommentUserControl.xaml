@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="AP_Project_4022.CustomerPage.foodCommentUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AP_Project_4022.CustomerPage"
+             mc:Ignorable="d" d:DesignWidth="800" Height="225">
+    <Grid Margin="0,0,0,10">
+        <Button Name="editButton" Content="edit" FontSize="18" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="92"/>
+        <Button Name="replyButton" Content="reply" FontSize="18" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="92" Margin="0,134,0,0"/>
+        <Button Name="deleteButton" Content="delete" FontSize="18" HorizontalAlignment="Left" Height="61" VerticalAlignment="Top" Width="92" Margin="0,68,0,0"/>
+        <Button Name="ratingButton" Content="rating" FontSize="18" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="129" Margin="661,0,0,0"/>
+        <Button Name="usernameButton" Content="username" FontSize="18" HorizontalAlignment="Left" Height="142" VerticalAlignment="Top" Width="129" Margin="661,73,0,0"/>
+        <Label Name="titleLabel" FontSize="20" Content="title" HorizontalAlignment="Left" Height="58" Margin="97,10,0,0" VerticalAlignment="Top" Width="559"/>
+        <Label Name="ContentLabel" FontSize="20" Content="content" HorizontalAlignment="Left" Height="132" Margin="97,73,0,0" VerticalAlignment="Top" Width="559"/>
+    </Grid>
+</UserControl>

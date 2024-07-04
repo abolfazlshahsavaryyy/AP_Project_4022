@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="AP_Project_4022.CustomerPage.complaintUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AP_Project_4022.CustomerPage"
+             mc:Ignorable="d" Width="585" Height="215">
+    <Grid Margin="0,0,10,10">
+        <Button Name="verifyButton" Content="not verify" FontSize="17" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="80"/>
+        <Label Name="titleCommentLabel" Content="title" FontSize="20" HorizontalAlignment="Left" Height="38" Margin="80,3,0,0" VerticalAlignment="Top" Width="238"/>
+        <Label Name="restaurantNameLabel" Content="restaurant name" FontSize="20" HorizontalAlignment="Left" Height="38" Margin="323,3,0,0" VerticalAlignment="Top" Width="252"/>
+        <Label Name="contentCommentLabel" Content="content comment"  FontSize="20" HorizontalAlignment="Center" Height="146" Margin="0,49,0,0" VerticalAlignment="Top" Width="555"/>
+
+    </Grid>
+</UserControl>

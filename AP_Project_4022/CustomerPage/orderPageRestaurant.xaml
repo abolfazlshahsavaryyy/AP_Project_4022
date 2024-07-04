@@ -1,0 +1,19 @@
+﻿<Window x:Class="AP_Project_4022.CustomerPage.orderPageRestaurant"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AP_Project_4022.CustomerPage"
+        mc:Ignorable="d"
+        Title="orderPageRestaurant" Height="450" Width="800"
+         WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="282" Margin="57,55,0,0" VerticalAlignment="Top" Width="343"/>
+        <Label Content="enter name of food:" FontSize="20" HorizontalAlignment="Left" Height="38" Margin="507,55,0,0" VerticalAlignment="Top" Width="206"/>
+        <TextBox Name="orderFoodTextBox" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="507,98,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206"/>
+        <Label Content="enter number of food" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="507,0,0,0" VerticalAlignment="Center" Width="206"/>
+        <TextBox Name="numberFoodTextBox" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="507,242,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206"/>
+        <Button Name="continueButton" Content="continue" FontSize="20" HorizontalAlignment="Left" Margin="566,333,0,0" VerticalAlignment="Top" Height="52" Width="92"/>
+
+    </Grid>
+</Window>

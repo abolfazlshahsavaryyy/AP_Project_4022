@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AP_Project_4022.SigninPage;
+using AP_Project_4022.CustomerPage;
 
 namespace AP_Project_4022
 {
@@ -21,6 +23,16 @@ namespace AP_Project_4022
             InitializeComponent();
             AdminPages.searchAmongRestaurants window1 = new AdminPages.searchAmongRestaurants();
             window1.Show();
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            customerFirstPage cfp= new customerFirstPage();cfp.Show();
+        }
+
+        private void SigninButton_Click(object sender, RoutedEventArgs e)
+        {
+            singinPage sp = new singinPage();sp.Show(); 
         }
     }
 }
