@@ -49,6 +49,7 @@ namespace AP_Project_4022.classes
         static Customer()
         {
             allCustomers = new List<Customer>();
+            allCustomers.Add(new Customer("ali", "reza", "abolfazlshahsavaryy@gmail.com", "password", "09901498364", "address",true,"customer"));
         }
 
         public Customer(string firstName, string lastName, string email, string password, string phoneNumber, string address, bool gender, string username) 
