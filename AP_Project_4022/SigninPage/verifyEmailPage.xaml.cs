@@ -26,7 +26,13 @@ namespace AP_Project_4022.SigninPage
 
         private void continueButton_Click(object sender, RoutedEventArgs e)
         {
-            passwordPage pp=new passwordPage();pp.Show();
+            if(verifyCodeTextBox.Text==singinPage.Verify_code_email.ToString())
+            {
+                passwordPage pp = new passwordPage(); pp.Show();
+                return;
+            }
+            MessageBox.Show("code not correct!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
         }
     }
 }
