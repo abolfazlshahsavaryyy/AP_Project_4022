@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using AP_Project_4022.CustomerPage;
 
 namespace AP_Project_4022.classes
 {
@@ -26,6 +27,25 @@ namespace AP_Project_4022.classes
         public bool gender { get; set; }//male:true ,female:false
         public static List<Customer> allCustomers { get; set; }
         public static Customer? currentCustomer { get; set; }
+        //####################################################################
+
+        public complaintPage complaint_page { get; set; }
+        public customerFirstPage customer_first_page { get; set; }
+        public foodCommentPage food_comment_page { get; set; }
+        public foodPage food_page { get; set; }
+        public foodRatingPage food_rating_page { get; set; }
+        public orderHistoryCommentpage order_history_comment_page { get; set; }
+        public orderHistoryPage order_history_page { get; set; }
+        public orderhistoryRatingPage order_history_rating_page { get; set; }
+        public orderPageRestaurant order_page_restaurant { get; set; }
+        public payPage pay_page { get; set; }
+        public profilePage profile_page { get; set; }
+        public restaurantMenuPage restaurant_menu_page { get; set; }
+        public searchRestaurantPage search_restaurant_page { get; set; }
+        public specialServicePage special_service_page { get; set; }
+
+        //####################################################################
+
         static Customer()
         {
             allCustomers = new List<Customer>();
