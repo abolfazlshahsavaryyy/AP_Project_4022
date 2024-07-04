@@ -1,4 +1,4 @@
-﻿using AP_Project_4022.RestaurantPages;
+﻿using AP_Project_4022;//.RestaurantPage
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,12 +30,12 @@ namespace AP_Project_4022.classes
         public static List<Restaurant> allRestaurant { get; set; }
         //################################################################################
         //pages
-        public AddFood add_food { get; set; }
-        public ChangeStock change_stock { get; set; }
-        public EditFood edit_food { get; set; }
-        public History history { get; set; }
-        public RemoveFood remove_food { get; set; }
-        public RestaurantPanel restaurant_panel { get; set; }
+        //public AddFood add_food { get; set; }
+        //public ChangeStock change_stock { get; set; }
+        //public EditFood edit_food { get; set; }
+        //public History history { get; set; }
+        //public RemoveFood remove_food { get; set; }
+        //public RestaurantPanel restaurant_panel { get; set; }
 
         //################################################################################
         static Restaurant()

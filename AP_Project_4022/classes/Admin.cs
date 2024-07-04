@@ -1,4 +1,4 @@
-﻿using AP_Project_4022.AdminPages;
+﻿using AP_Project_4022;//.AdminPages
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +13,17 @@ namespace AP_Project_4022.classes
         public string UserName { get; set; }
         public string Password { get; set; }
         public static List<Admin> allAdmin=new List<Admin>();
-        public Admin? CurrentAdmin { get; set; }
+        public static Admin? CurrentAdmin { get; set; }
         //########################################################################
 
-        public adminMenu admin_Menu { get; set; }
-        public CheckComplaint Check_Complaint { get; set; }
-        public searchAmmongComplaints search_Ammong_Complaints { get; set; }
-        public searchAmongRestaurants search_Among_Restaurants { get; set; }
-        public showAllComplaints show_All_Complaints { get; set; }
-        public showSearchComplaints show_Search_Complaints { get; set; }
-        public showSerachRestaurant show_Serach_Restaurant { get; set; }
-        public showUncheckedComplaints show_Un_checked_Complaints { get; set; }
+        //public adminMenu admin_Menu { get; set; }
+        //public CheckComplaint Check_Complaint { get; set; }
+        //public searchAmmongComplaints search_Ammong_Complaints { get; set; }
+        //public searchAmongRestaurants search_Among_Restaurants { get; set; }
+        //public showAllComplaints show_All_Complaints { get; set; }
+        //public showSearchComplaints show_Search_Complaints { get; set; }
+        //public showSerachRestaurant show_Serach_Restaurant { get; set; }
+        //public showUncheckedComplaints show_Un_checked_Complaints { get; set; }
 
         //########################################################################
         public Admin(string userName, string password)
