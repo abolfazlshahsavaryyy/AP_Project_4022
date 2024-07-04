@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Label Content="login page" FontSize="23" HorizontalAlignment="Center" Height="44" Margin="0,10,0,0" VerticalAlignment="Top" Width="124"/>
+        <Label Content="username" FontSize="20" HorizontalAlignment="Left" Height="44" Margin="50,89,0,0" VerticalAlignment="Top" Width="189"/>
+        <Label Content="password" FontSize="20" HorizontalAlignment="Left" Height="44" Margin="50,158,0,0" VerticalAlignment="Top" Width="189"/>
+        <TextBox Name="usernameTextBox" FontSize="20" HorizontalAlignment="Left" Height="44" Margin="291,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="401"/>
+        <Button Name="LoginButton" Content="log in" FontSize="30" HorizontalAlignment="Left" Height="52" Margin="144,312,0,0" VerticalAlignment="Top" Width="139" Click="LoginButton_Click"/>
+        <Button Name="SigninButton" Content="sign in" FontSize="30" HorizontalAlignment="Left" Height="52" Margin="492,312,0,0" VerticalAlignment="Top" Width="138" Click="SigninButton_Click"/>
+        <PasswordBox Name="passwordTextBox" FontSize="20" HorizontalAlignment="Left" Height="39" Margin="291,163,0,0" VerticalAlignment="Top" Width="401"/>
 
     </Grid>
 </Window>

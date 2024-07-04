@@ -22,5 +22,15 @@ namespace AP_Project_4022
             AdminPages.searchAmongRestaurants window1 = new AdminPages.searchAmongRestaurants();
             window1.Show();
         }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SigninButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
