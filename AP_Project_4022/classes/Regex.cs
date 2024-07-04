@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace AP_Project_4022.classes
 {
-    class RegexValidation
+    public class RegexValidation
     {
         public static bool ValidateCustomerPassword(string password)
         {
