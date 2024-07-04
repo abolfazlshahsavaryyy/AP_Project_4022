@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AP_Project_4022.CustomerPage"
         mc:Ignorable="d"
-        Title="orderhistoryRatingPage" Height="450" Width="800">
+        Title="orderhistoryRatingPage" Height="450" Width="800"
+         WindowStartupLocation="CenterScreen">
     <Grid>
         <Button Name="AddCommentButyon"  FontSize="24" Content="add comment" HorizontalAlignment="Center" Height="90" Margin="0,303,0,0" VerticalAlignment="Top" Width="204"/>
         <Label  Content="enter rating" FontSize="20" Margin="212,71,233,285"/>

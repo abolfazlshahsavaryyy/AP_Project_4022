@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AP_Project_4022.CustomerPage"
         mc:Ignorable="d"
-        Title="orderPageRestaurant" Height="450" Width="800">
+        Title="orderPageRestaurant" Height="450" Width="800"
+         WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel HorizontalAlignment="Left" Height="282" Margin="57,55,0,0" VerticalAlignment="Top" Width="343"/>
         <Label Content="enter name of food:" FontSize="20" HorizontalAlignment="Left" Height="38" Margin="507,55,0,0" VerticalAlignment="Top" Width="206"/>

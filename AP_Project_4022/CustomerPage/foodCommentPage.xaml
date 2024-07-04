@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AP_Project_4022.CustomerPage"
         mc:Ignorable="d"
-        Title="foodCommentPage" Height="450" Width="800">
+        Title="foodCommentPage" Height="450" Width="800"
+         WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="title" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="54,38,0,0" VerticalAlignment="Top" Width="243"/>
         <TextBox Name="titleCommentTextBox" FontSize="20" HorizontalAlignment="Left" Height="56" Margin="54,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="220"/>
