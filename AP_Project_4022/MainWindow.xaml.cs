@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using AP_Project_4022.AdminPages;
+using AP_Project_4022.classes;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,13 +21,13 @@ namespace AP_Project_4022
         public MainWindow()
         {
             InitializeComponent();
-            AdminPages.searchAmongRestaurants window1 = new AdminPages.searchAmongRestaurants();
-            window1.Show();
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Admin.CurrentAdmin = Admin.allAdmin[0];
+            adminMenu adminMenu = new adminMenu();
+            adminMenu.Show();
         }
 
         private void SigninButton_Click(object sender, RoutedEventArgs e)

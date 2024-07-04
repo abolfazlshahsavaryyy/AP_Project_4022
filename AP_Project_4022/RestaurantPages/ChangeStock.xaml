@@ -19,10 +19,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="Change Stock" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="Gray" />
-        <TextBox x:Name="txtName" Grid.Row="1" Grid.Column="1" Margin="10, 40, 10, 40" />
+        <TextBox x:Name="txtName" Grid.Row="1" Grid.Column="1" Margin="10, 40, 10, 40"  TextAlignment="Left" FontSize="15" />
         <TextBlock x:Name="tbName" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Food Name:" FontSize="22" />
         <Button x:Name="btnName" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Height="50" Content="Done" Click="btnName_Click" />
-        <TextBox x:Name="txtStock" Grid.Row="2" Grid.Column="1" Margin="10, 40, 10, 40" Visibility="Hidden"/>
+        <TextBox x:Name="txtStock" Grid.Row="2" Grid.Column="1" Margin="10, 40, 10, 40" Visibility="Hidden"  TextAlignment="Left" FontSize="15"/>
         <TextBlock x:Name="tbStock" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Hidden" Text="Stock:" FontSize="22" />
         <Button x:Name="btnDone" Content="Done" Grid.Row="3" Grid.Column="2" Width="100" Height="50" Visibility="Hidden" VerticalAlignment="Top" HorizontalAlignment="Left" Click="btnDone_Click"/>
 

@@ -25,6 +25,8 @@ namespace AP_Project_4022.classes
         public showSerachRestaurant show_Serach_Restaurant { get; set; }
         public showUncheckedComplaints show_Un_checked_Complaints { get; set; }
 
+        public Window1 AddRestaurant { get; set;}
+
         //########################################################################
         public Admin(string userName, string password)
         {

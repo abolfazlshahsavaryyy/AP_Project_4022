@@ -26,7 +26,10 @@ namespace AP_Project_4022.AdminPages
 
         private void btnAddRestaurant_Click(object sender, RoutedEventArgs e)
         {
-
+            AdminPages.adminMenu adminMenu = new AdminPages.adminMenu();
+            classes.Admin.CurrentAdmin.admin_Menu = adminMenu;
+            classes.Admin.CurrentAdmin.AddRestaurant = new Window1();
+            classes.Admin.CurrentAdmin.AddRestaurant.Show();
         }
 
         private void btnSearchRestaurant_Click(object sender, RoutedEventArgs e)

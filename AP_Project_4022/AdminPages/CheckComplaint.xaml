@@ -21,8 +21,8 @@
         <TextBlock Grid.Column="1" x:Name="tbTitle" Text="Answer Complaint" FontSize="20" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center" />
         <TextBlock Grid.Row="1" x:Name="tbName" Text="Enter title of complaint: " FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
         <TextBlock Grid.Row="2" x:Name="tbAnswer" Text="Enter Answer: " FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Right"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="10" x:Name="txtName" FontSize="20"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="10" x:Name="txtAnswer" FontSize="20"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="10" x:Name="txtName" TextAlignment="Left" FontSize="15"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="10" x:Name="txtAnswer"  TextAlignment="Left" FontSize="15"/>
         <Button x:Name="btnDone" Click="btnDone_Click" Grid.Row="3" Grid.Column="2" Height="50" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Done" FontSize="20" />
     </Grid>
 </Window>
