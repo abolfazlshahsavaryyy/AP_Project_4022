@@ -8,12 +8,13 @@
         Title="orderPageRestaurant" Height="450" Width="800"
          WindowStartupLocation="CenterScreen">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="282" Margin="57,55,0,0" VerticalAlignment="Top" Width="343"/>
-        <Label Content="enter name of food:" FontSize="20" HorizontalAlignment="Left" Height="38" Margin="507,55,0,0" VerticalAlignment="Top" Width="206"/>
-        <TextBox Name="orderFoodTextBox" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="507,98,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206"/>
-        <Label Content="enter number of food" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="507,0,0,0" VerticalAlignment="Center" Width="206"/>
-        <TextBox Name="numberFoodTextBox" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="507,242,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206"/>
-        <Button Name="continueButton" Content="continue" FontSize="20" HorizontalAlignment="Left" Margin="566,333,0,0" VerticalAlignment="Top" Height="52" Width="92"/>
+        <Label Content="enter number of food" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="465,68,0,0" VerticalAlignment="Top" Width="206"/>
+        <TextBox Name="numberFoodTextBox" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="465,136,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206"/>
+        <Button Name="continueButton" Content="continue" FontSize="20" HorizontalAlignment="Left" Margin="522,276,0,0" VerticalAlignment="Top" Height="52" Width="92" Click="continueButton_Click"/>
+        <Label Name="nameFoodLabel" Content="Label" HorizontalAlignment="Left" Height="40" Margin="63,68,0,0" VerticalAlignment="Top" Width="210"/>
+        <Label Name="categoryLabel" Content="Label" HorizontalAlignment="Left" Height="40" Margin="63,126,0,0" VerticalAlignment="Top" Width="210"/>
+        <Label Name="numberFoodLabel" Content="Label" HorizontalAlignment="Left" Height="40" Margin="63,0,0,0" VerticalAlignment="Center" Width="210"/>
+        <Label Name="priceFoodLabel" Content="Label" HorizontalAlignment="Left" Height="40" Margin="63,258,0,0" VerticalAlignment="Top" Width="210"/>
 
     </Grid>
 </Window>
