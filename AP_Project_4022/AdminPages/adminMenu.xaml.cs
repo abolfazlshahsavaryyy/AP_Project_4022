@@ -34,7 +34,8 @@ namespace AP_Project_4022.AdminPages
 
         private void btnSearchRestaurant_Click(object sender, RoutedEventArgs e)
         {
-
+            classes.Admin.CurrentAdmin.search_Among_Restaurants = new searchAmongRestaurants();
+            classes.Admin.CurrentAdmin.search_Among_Restaurants.Show();
         }
 
         private void btnSearchComplaint_Click(object sender, RoutedEventArgs e)

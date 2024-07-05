@@ -27,6 +27,7 @@ namespace AP_Project_4022.classes
         //number of table in restaurant
         public int numberTable {  get; set; }
         public string adress { get; set; }
+        public int complaintNumber { get; set; }
         public static Restaurant currentRestaurant { get; set; }
         public static List<Restaurant> allRestaurant { get; set; }
         //################################################################################
@@ -55,6 +56,7 @@ namespace AP_Project_4022.classes
             this.password = password;   
             this.averagePoint = averagePoint;
             this.adress = adress;
+            this.complaintNumber = 0;
             this.foods = new List<Food>();
         }
         public static void AddRestaurant(Restaurant restaurant)

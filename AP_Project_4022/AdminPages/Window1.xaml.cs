@@ -48,6 +48,13 @@ namespace AP_Project_4022.AdminPages
                 System.Windows.MessageBox.Show(message, title);
                 isDone = false;
             }
+            else if(txtAdmission.Text != "dine_in" && txtAdmission.Text != "delivery")
+            {
+                string message = "Admission type should be dine_in or delivery!";
+                string title = "Error";
+                System.Windows.MessageBox.Show(message, title);
+                isDone = false;
+            }
             else
             {
                 try
@@ -76,7 +83,7 @@ namespace AP_Project_4022.AdminPages
                     con1.Open();
                     if (isDone)
                     {
-                        command = "insert into RestaurantTable values('" + txtUsername.Text + "' , '" + txtPassword.Text + "' , '" + txtCity.Text + "' , '" + null + "' , '" + txtName.Text + "' , '" + null + "' , '" + null + "', '" + int.Parse(txtTable.Text) + "' , '" + txtAddress.Text + "' , '"+ null +"')";
+                        command = "insert into RestaurantTable values('" + txtUsername.Text + "' , '" + txtPassword.Text + "' , '" + txtCity.Text + "' , '" + txtAdmission.Text + "' , '" + txtName.Text + "' , '" + null + "' , '" + null + "', '" + int.Parse(txtTable.Text) + "' , '" + txtAddress.Text + "' , '"+ null +"' , '"+ 0 +"')";
                         SqlCommand com1 = new SqlCommand(command, con1);
                         com1.BeginExecuteNonQuery();
                         string message1 = "Restaurant added successfully!";

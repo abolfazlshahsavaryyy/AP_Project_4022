@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -24,8 +26,12 @@ namespace AP_Project_4022.AdminPages
             InitializeComponent();
             tbTitle.Text = "Search Restaurants by " + searchBy;
             tbHint.Text = "Enter " + searchBy;
-            if(searchBy == "Complaint")
-                stcSearchBar.Visibility = Visibility.Hidden;   
+            if (searchBy == "Complaint")
+            {
+                stcSearchBar.Visibility = Visibility.Hidden;
+
+            }
+//            lstRestaurant.Items.Add(new { Username = "un", City = "city", Name = "name", AvgPoint = 3, Tables = 15, Address = "address" });
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
