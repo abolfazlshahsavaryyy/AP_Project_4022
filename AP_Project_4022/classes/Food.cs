@@ -49,7 +49,14 @@ namespace AP_Project_4022.classes
         }
         public static Food? GetFood(string name)
         {
-            return allFood.Where(x=>x.name == name).FirstOrDefault();
+            for(int i = 0; i < allFood.Count; i++)
+            {
+                if (allFood[i].name == name)
+                {
+                    return allFood[i];
+                }
+            }
+            return null;
         }
         public static bool IsFoodExists(string name)
         {

@@ -61,6 +61,7 @@ namespace AP_Project_4022.classes
             Restaurant.allRestaurant.Add(new Restaurant("username2", "password2", "Esfahan", AdmissionType.delivery, "name2", 3, "address2", 10));
             Restaurant.allRestaurant.Add(new Restaurant("username3", "password3", "Tehran", AdmissionType.dine_in, "name3", 8, "address3", 10));
             Restaurant.allRestaurant.Add(new Restaurant("username4", "password4", "Tehran", null, "name4", 2, "address4", 10));
+            Food.allFood = allRestaurant[0].foods;
 
         }
         public Restaurant(string userName, string password, string city, AdmissionType? admissionType, string name, double averagePoint, string adress,int number_table)   
