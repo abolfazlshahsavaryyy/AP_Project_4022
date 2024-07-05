@@ -16,6 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Linq;
 
 namespace AP_Project_4022.AdminPages
 {
@@ -43,12 +44,12 @@ namespace AP_Project_4022.AdminPages
                 adapter.Fill(data);
                 SqlCommand com = new SqlCommand(command, con);
                 com.BeginExecuteNonQuery();
-                for (int i = 0; i < data.Rows.Count; i++)
+                var wanted = (from d in data.AsEnumerable()
+                             where d.Field<int>("Complaints") != 0
+                             select d).ToList();
+                foreach( var d in wanted )
                 {
-                    if (int.Parse(data.Rows[i][10].ToString()) != 0)
-                    {
-                        lstRestaurant.Items.Add(new { Username = data.Rows[i][0], City = data.Rows[i][2], Name = data.Rows[i][4], AvgPoint = data.Rows[i][6], Tables = data.Rows[i][7], Address = data.Rows[i][8], Complaints = data.Rows[i][10] });
-                    }
+                    lstRestaurant.Items.Add(new { Username = d.Field<string>("UserName"), City = d.Field<string>("City"), Name = d.Field<string>("Name"), AvgPoint = d.Field<double>("AveragePoint"), Tables = d.Field<int>("NumberTable"), Address = d.Field<string>("Adress"), Complaints = d.Field<int>("Complaints") });
                 }
                 con.Close();
             }
@@ -71,12 +72,12 @@ namespace AP_Project_4022.AdminPages
                 adapter.Fill(data);
                 SqlCommand com = new SqlCommand(command, con);
                 com.BeginExecuteNonQuery();
-                for (int i = 0; i < data.Rows.Count; i++)
+                var wanted = (from d in data.AsEnumerable()
+                              where d.Field<string>("City").ToLower().Contains(txtSearch.Text.ToLower())
+                              select d).ToList();
+                foreach (var d in wanted)
                 {
-                    if ((data.Rows[i][2].ToString().ToLower()).Contains(txtSearch.Text.ToLower()))
-                    {
-                        lstRestaurant.Items.Add(new { Username = data.Rows[i][0], City = data.Rows[i][2], Name = data.Rows[i][4], AvgPoint = data.Rows[i][6], Tables = data.Rows[i][7], Address = data.Rows[i][8], Complaints = data.Rows[i][10] });
-                    }
+                    lstRestaurant.Items.Add(new { Username = d.Field<string>("UserName"), City = d.Field<string>("City"), Name = d.Field<string>("Name"), AvgPoint = d.Field<double>("AveragePoint"), Tables = d.Field<int>("NumberTable"), Address = d.Field<string>("Adress"), Complaints = d.Field<int>("Complaints") });
                 }
                 con.Close();
             }
@@ -91,12 +92,12 @@ namespace AP_Project_4022.AdminPages
                 adapter.Fill(data);
                 SqlCommand com = new SqlCommand(command, con);
                 com.BeginExecuteNonQuery();
-                for (int i = 0; i < data.Rows.Count; i++)
+                var wanted = (from d in data.AsEnumerable()
+                              where d.Field<string>("Name").ToLower().Contains(txtSearch.Text.ToLower())
+                              select d).ToList();
+                foreach (var d in wanted)
                 {
-                    if ((data.Rows[i][4].ToString().ToLower()).Contains(txtSearch.Text.ToLower()))
-                    {
-                        lstRestaurant.Items.Add(new { Username = data.Rows[i][0], City = data.Rows[i][2], Name = data.Rows[i][4], AvgPoint = data.Rows[i][6], Tables = data.Rows[i][7], Address = data.Rows[i][8], Complaints = data.Rows[i][10] });
-                    }
+                    lstRestaurant.Items.Add(new { Username = d.Field<string>("UserName"), City = d.Field<string>("City"), Name = d.Field<string>("Name"), AvgPoint = d.Field<double>("AveragePoint"), Tables = d.Field<int>("NumberTable"), Address = d.Field<string>("Adress"), Complaints = d.Field<int>("Complaints") });
                 }
                 con.Close();
             }
@@ -119,12 +120,12 @@ namespace AP_Project_4022.AdminPages
                     adapter.Fill(data);
                     SqlCommand com = new SqlCommand(command, con);
                     com.BeginExecuteNonQuery();
-                    for (int i = 0; i < data.Rows.Count; i++)
+                    var wanted = (from d in data.AsEnumerable()
+                                  where d.Field<double>("AveragePoint") >= double.Parse(txtSearch.Text)
+                                  select d).ToList();
+                    foreach (var d in wanted)
                     {
-                        if (double.Parse(data.Rows[i][6].ToString()) >= double.Parse(txtSearch.Text.ToString()))
-                        {
-                            lstRestaurant.Items.Add(new { Username = data.Rows[i][0], City = data.Rows[i][2], Name = data.Rows[i][4], AvgPoint = data.Rows[i][6], Tables = data.Rows[i][7], Address = data.Rows[i][8], Complaints = data.Rows[i][10] });
-                        }
+                        lstRestaurant.Items.Add(new { Username = d.Field<string>("UserName"), City = d.Field<string>("City"), Name = d.Field<string>("Name"), AvgPoint = d.Field<double>("AveragePoint"), Tables = d.Field<int>("NumberTable"), Address = d.Field<string>("Adress"), Complaints = d.Field<int>("Complaints") });
                     }
                     con.Close();
                 }
