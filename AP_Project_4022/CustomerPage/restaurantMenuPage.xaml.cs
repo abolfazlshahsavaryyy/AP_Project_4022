@@ -69,10 +69,7 @@ namespace AP_Project_4022.CustomerPage
 
         }
 
-        private void orderButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
         private void foodButton_Click(object sender, RoutedEventArgs e)
         {
             Customer.currentCustomer.food_page = new foodPage();
@@ -89,7 +86,11 @@ namespace AP_Project_4022.CustomerPage
 
 
             };
-            Comment.allcomments = click_food.foodComments;//delete
+            for(int i = 0; i < click_food.foodComments.Count; i++)
+            {
+                Comment.allcomments.Add(new Comment(click_food.foodComments[i].id, click_food.foodComments[i].content,
+                    click_food.foodComments[i].title, new Comment(), click_food.foodComments[i].dateComment));
+            }
             for(int i = 0; i < click_food.foodComments.Count; i++)
             {
                 click_food.foodComments[i].customer_comment = Customer.currentCustomer;
@@ -115,6 +116,8 @@ namespace AP_Project_4022.CustomerPage
             }
             foodPage.current_food = click_food;
             Customer.currentCustomer.food_page.Show();
+            
+            
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)

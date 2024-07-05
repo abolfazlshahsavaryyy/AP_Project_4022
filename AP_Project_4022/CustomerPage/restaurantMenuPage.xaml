@@ -8,10 +8,9 @@
         Title="restaurantMenuPage" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="menu" FontSize="36" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="176" Margin="45,18,0,0"/>
-        <Button x:Name="reserveButton" Content="reserve" FontSize="20" HorizontalAlignment="Left" Height="31" Margin="585,107,0,0" VerticalAlignment="Top" Width="158" Click="reserveButton_Click"/>
-        <Button x:Name="orderButton" Content="order" FontSize="20" HorizontalAlignment="Left" Height="31" Margin="585,302,0,0" VerticalAlignment="Top" Width="158" Click="orderButton_Click"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="330" Margin="168,54,0,0" VerticalAlignment="Top" Width="302">
+        <Label Content="menu" FontSize="36" HorizontalAlignment="Center" Height="72" VerticalAlignment="Top" Width="176" Margin="0,-18,0,0"/>
+        <Button x:Name="reserveButton" Content="reserve" FontSize="20" HorizontalAlignment="Left" Height="79" Margin="578,201,0,0" VerticalAlignment="Top" Width="158" Click="reserveButton_Click"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="330" Margin="168,54,0,0" VerticalAlignment="Top" Width="365">
             <StackPanel x:Name="menuStackPanel" Height="1439" Width="247"/>
         </ScrollViewer>
 
