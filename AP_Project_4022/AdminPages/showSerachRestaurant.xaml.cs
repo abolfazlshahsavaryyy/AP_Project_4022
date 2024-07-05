@@ -1,7 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,9 +32,24 @@ namespace AP_Project_4022.AdminPages
             if (searchBy == "Complaint")
             {
                 stcSearchBar.Visibility = Visibility.Hidden;
-
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\U\source\repos\AP_Project_4022\AP_Project_4022\database.mdf;Integrated Security=True;Connect Timeout=30");
+                con.Open();
+                string command;
+                command = "select * from RestaurantTable";
+                SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+                DataTable data = new DataTable();
+                adapter.Fill(data);
+                SqlCommand com = new SqlCommand(command, con);
+                com.BeginExecuteNonQuery();
+                for (int i = 0; i < data.Rows.Count; i++)
+                {
+                    if (int.Parse(data.Rows[i][10].ToString()) != 0)
+                    {
+                        lstRestaurant.Items.Add(new { Username = data.Rows[i][0], City = data.Rows[i][2], Name = data.Rows[i][4], AvgPoint = data.Rows[i][6], Tables = data.Rows[i][7], Address = data.Rows[i][8], Complaints = data.Rows[i][10] });
+                    }
+                }
+                con.Close();
             }
-//            lstRestaurant.Items.Add(new { Username = "un", City = "city", Name = "name", AvgPoint = 3, Tables = 15, Address = "address" });
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)

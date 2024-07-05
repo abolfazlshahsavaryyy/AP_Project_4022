@@ -83,7 +83,7 @@ namespace AP_Project_4022.AdminPages
                     con1.Open();
                     if (isDone)
                     {
-                        command = "insert into RestaurantTable values('" + txtUsername.Text + "' , '" + txtPassword.Text + "' , '" + txtCity.Text + "' , '" + txtAdmission.Text + "' , '" + txtName.Text + "' , '" + null + "' , '" + null + "', '" + int.Parse(txtTable.Text) + "' , '" + txtAddress.Text + "' , '"+ null +"' , '"+ 0 +"')";
+                        command = "insert into RestaurantTable values('" + txtUsername.Text + "' , '" + txtPassword.Text + "' , '" + txtCity.Text + "' , '" + txtAdmission.Text + "' , '" + txtName.Text + "' , '" + null + "' , '" + 0 + "', '" + int.Parse(txtTable.Text) + "' , '" + txtAddress.Text + "' , '"+ null +"' , '"+ 0 +"')";
                         SqlCommand com1 = new SqlCommand(command, con1);
                         com1.BeginExecuteNonQuery();
                         string message1 = "Restaurant added successfully!";
