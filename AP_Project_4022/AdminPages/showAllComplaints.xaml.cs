@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,23 @@ namespace AP_Project_4022.AdminPages
         public showAllComplaints()
         {
             InitializeComponent();
+            lstComplaints.Items.Clear();
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\U\source\repos\AP_Project_4022\AP_Project_4022\database.mdf;Integrated Security=True;Connect Timeout=30");
+            con.Open();
+            string command;
+            command = "select * from ComplaintTable";
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            SqlCommand com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            var wanted = (from d in data.AsEnumerable()
+                          select d).ToList();
+            foreach (var d in wanted)
+            {
+                lstComplaints.Items.Add(new { ID = d.Field<int>("Id"), Restaurant = d.Field<string>("Restaurant"), CUsername = d.Field<string>("CustomerUserName"), Checked = d.Field<bool>("IsCheck"), CName = d.Field<string>("CustomerName") });
+            }
+            con.Close();
         }
     }
 }
