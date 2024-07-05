@@ -99,6 +99,12 @@ namespace AP_Project_4022.CustomerPage
                 orderPageRestaurant.price = -1;
                 return;
             }
+            if (reservePage.table_want > 0)
+            {
+                MessageBox.Show($"reserve {reservePage.table_want} ");
+                reservePage.table_want = -1;
+                return;
+            }
 
         }
     }
