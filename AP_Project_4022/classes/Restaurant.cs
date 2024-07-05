@@ -17,11 +17,12 @@ namespace AP_Project_4022.classes
         public string userName { get; set; }
         public string password { get; set; }
         public string city { get; set; }
-        public AdmissionType admissionType { get; set; }
+        public AdmissionType? admissionType { get; set; }
         //name of two restaurant must not be same
         public string name { get; set; }
         //save every rating (food rating,reserve rating,order rating)
         public List<int> allrating { get; set; }
+        public List<Food> foods { get; set; }
         public double averagePoint { get; set; }
         //number of table in restaurant
         public int numberTable {  get; set; }
@@ -44,7 +45,7 @@ namespace AP_Project_4022.classes
             allRestaurant.Add(new Restaurant("Restaurant", "password", "Esfahan", AdmissionType.delivery, "Restaurant", 5, "address", 10));
 
         }
-        public Restaurant(string userName, string password, string city, AdmissionType admissionType, string name, double averagePoint, string adress,int number_table)   
+        public Restaurant(string userName, string password, string city, AdmissionType? admissionType, string name, double averagePoint, string adress,int number_table)   
         {
             this.city = city;
             this.admissionType = admissionType;
@@ -54,6 +55,7 @@ namespace AP_Project_4022.classes
             this.password = password;   
             this.averagePoint = averagePoint;
             this.adress = adress;
+            this.foods = new List<Food>();
         }
         public static void AddRestaurant(Restaurant restaurant)
         {

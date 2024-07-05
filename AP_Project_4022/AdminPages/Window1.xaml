@@ -13,6 +13,8 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -24,11 +26,15 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Password: " FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right" Name="tbPasswordHint" />
         <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Height="50" Margin="10" Name="txtUsername"  TextAlignment="Left" FontSize="15"/>
         <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Height="50" Margin="10" Name="txtPassword"  TextAlignment="Left" FontSize="15"/>
-        <Button Grid.Row="4" Grid.Column="3" Height="50" Width="100" Content="Add" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Name="btnAdd" Margin="10" Click="btnAdd_Click"/>
+        <Button Grid.Row="6" Grid.Column="3" Height="50" Width="100" Content="Add" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Name="btnAdd" Margin="10" Click="btnAdd_Click"/>
         <TextBlock Grid.Row="4" Grid.Column="0" Text="City: " FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right" Name="tbCityHint" />
         <TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Height="50" Margin="10" Name="txtCity"  TextAlignment="Left" FontSize="15"/>
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Name: " FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right" Name="tbNameHint" />
         <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Height="50" Margin="10" Name="txtName"  TextAlignment="Left" FontSize="15"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Number of tables: " FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right" Name="tbTableHint" />
+        <TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Height="50" Margin="10" Name="txtTable"  TextAlignment="Left" FontSize="15"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Address: " FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right" Name="tbAddressHint" />
+        <TextBox Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Height="50" Margin="10" Name="txtAddress"  TextAlignment="Left" FontSize="15"/>
 
 
 
