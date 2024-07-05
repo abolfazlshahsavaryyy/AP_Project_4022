@@ -12,7 +12,7 @@
         <TextBox Name="titleCommentTextBox" FontSize="20" HorizontalAlignment="Left" Height="56" Margin="54,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="220"/>
         <Label Content="content" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="473,38,0,0" VerticalAlignment="Top" Width="243"/>
         <TextBox Name="contentCommentTextBox" FontSize="20" HorizontalAlignment="Left" Height="56" Margin="473,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="220"/>
-        <Button Name="addCommentButton" Content="add comment" FontSize="20" HorizontalAlignment="Left" Height="59" Margin="274,285,0,0" VerticalAlignment="Top" Width="208"/>
+        <Button Name="addCommentButton" Content="add comment" FontSize="20" HorizontalAlignment="Left" Height="59" Margin="274,285,0,0" VerticalAlignment="Top" Width="208" Click="addCommentButton_Click"/>
 
     </Grid>
 </Window>
