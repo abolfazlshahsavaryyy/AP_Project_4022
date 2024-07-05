@@ -23,5 +23,21 @@ namespace AP_Project_4022.CustomerPage
         {
             InitializeComponent();
         }
+
+        private void bayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(onlineCheckBox.IsChecked == true)
+            {
+                onlinePaySimiulate ops=new onlinePaySimiulate();
+                ops.titleLabel.Content ="price of buy: "+ orderPageRestaurant.price.ToString();
+                ops.Show();
+                this.Close();
+            }
+            if(cashCheckBox.IsChecked == true)
+            {
+                MessageBox.Show("your order record");
+                this.Close();
+            }
+        }
     }
 }

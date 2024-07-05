@@ -10,7 +10,7 @@
     <Grid>
         <CheckBox Name="cashCheckBox" Content="cash" FontSize="26" HorizontalAlignment="Left" Height="51" Margin="77,63,0,0" VerticalAlignment="Top" Width="183"/>
         <CheckBox Name="onlineCheckBox" Content="online" FontSize="26" HorizontalAlignment="Left" Height="51" Margin="490,63,0,0" VerticalAlignment="Top" Width="183"/>
-        <Button Name="bayButton" Content="buy" FontSize="30" HorizontalAlignment="Center" Height="58" Margin="0,265,0,0" VerticalAlignment="Top" Width="232"/>
+        <Button Name="bayButton" Content="buy" FontSize="30" HorizontalAlignment="Center" Height="58" Margin="0,265,0,0" VerticalAlignment="Top" Width="232" Click="bayButton_Click"/>
 
     </Grid>
 </Window>
