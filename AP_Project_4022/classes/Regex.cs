@@ -23,7 +23,7 @@ namespace AP_Project_4022.classes
         }
         public static bool ValidateEmail(string email)
         {
-            string pattern = @"^[a-zA-Z]{3,32}@[a-zA-Z]{3,32}\.[a-zA-Z]{2,3}$";
+            string pattern = @"^[a-zA-Z0-9]{3,32}@[a-zA-Z]{3,32}\.[a-zA-Z]{2,3}$";
             return Regex.IsMatch(email, pattern);
         }
         public static bool ValidateMobileNumber(string mobileNumber)
