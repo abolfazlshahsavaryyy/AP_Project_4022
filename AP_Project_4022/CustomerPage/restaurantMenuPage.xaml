@@ -8,9 +8,9 @@
         Title="restaurantMenuPage" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="menu" FontSize="36" HorizontalAlignment="Center" Height="72" VerticalAlignment="Top" Width="176" Margin="0,-18,0,0"/>
+        <Label Content="menu" FontSize="36" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="176" Margin="614,0,0,0"/>
         <Button x:Name="reserveButton" Content="reserve" FontSize="20" HorizontalAlignment="Left" Height="79" Margin="578,201,0,0" VerticalAlignment="Top" Width="158" Click="reserveButton_Click"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="330" Margin="168,54,0,0" VerticalAlignment="Top" Width="365">
+        <ScrollViewer HorizontalAlignment="Left" Height="330" Margin="84,54,0,0" VerticalAlignment="Top" Width="449">
             <StackPanel x:Name="menuStackPanel" Height="1439" Width="247"/>
         </ScrollViewer>
 

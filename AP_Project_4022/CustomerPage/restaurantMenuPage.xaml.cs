@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,7 +67,9 @@ namespace AP_Project_4022.CustomerPage
 
         private void reserveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            reservePage rp=new reservePage();
+            rp.tableNumberLabel.Content = "number of table of this restaurant: " + Restaurant_Menu.numberTable.ToString();
+            rp.Show();
         }
 
         
@@ -75,25 +78,20 @@ namespace AP_Project_4022.CustomerPage
             Customer.currentCustomer.food_page = new foodPage();
             string name = (sender as Button).Name;
             Food click_food = Food.GetFood(name);
-            click_food.foodComments = new List<Comment>
-            {
-                new Comment(1,"food comment content","title food comment",new Comment(),DateTime.Now),
-                new Comment(2,"greate food amazing","good food",new Comment(),DateTime.Now),
-                new Comment(3,"this wasney grear food for me","normal food",new Comment(),DateTime.Now),
-                new Comment(4,"no to bad it was deluses but not good restaurant","good",new Comment(),DateTime.Now),
-                new Comment(5,"amaginz food for me I remember my chieldhood time while I eat it","old food",new Comment(),DateTime.Now),
-                new Comment(6,"I love it its amazing","amazing",new Comment(),DateTime.Now)
 
-
-            };
-            for(int i = 0; i < click_food.foodComments.Count; i++)
+            Comment.allcomments.Add(new Comment(1, "food comment content", "title food comment", new Comment(), DateTime.Now));
+            Comment.allcomments.Add(new Comment(2,"greate food amazing","good food",new Comment(),DateTime.Now));
+            Comment.allcomments.Add(new Comment(3, "this wasney grear food for me", "normal food", new Comment(), DateTime.Now));
+            Comment.allcomments.Add(new Comment(4, "no to bad it was deluses but not good restaurant", "good", new Comment(), DateTime.Now));
+            Comment.allcomments.Add(new Comment(5, "amaginz food for me I remember my chieldhood time while I eat it", "old food", new Comment(), DateTime.Now));
+            Comment.allcomments.Add(new Comment(6, "I love it its amazing", "amazing", new Comment(), DateTime.Now));
+            for(int i = 0; i < Comment.allcomments.Count; i++)
             {
-                Comment.allcomments.Add(new Comment(click_food.foodComments[i].id, click_food.foodComments[i].content,
-                    click_food.foodComments[i].title, new Comment(), click_food.foodComments[i].dateComment));
+                Comment.allcomments[i].customer_comment = Customer.currentCustomer;
             }
-            for(int i = 0; i < click_food.foodComments.Count; i++)
+            for(int i = 0; i < Comment.allcomments.Count; i++)
             {
-                click_food.foodComments[i].customer_comment = Customer.currentCustomer;
+                click_food.foodComments.Add(Comment.allcomments[i]);
             }
             List<Comment> food_comment = click_food.foodComments;
             for(int i=0;i<food_comment.Count;i++)
