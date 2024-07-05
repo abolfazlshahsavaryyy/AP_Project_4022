@@ -56,6 +56,10 @@ namespace AP_Project_4022.AdminPages
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            for(int i = 0; i <  lstRestaurant.Items.Count; i++)
+            {
+                lstRestaurant.Items.RemoveAt(i);
+            }
             if(search == "City")
             {
                 SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\U\source\repos\AP_Project_4022\AP_Project_4022\database.mdf;Integrated Security=True;Connect Timeout=30");
