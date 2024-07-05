@@ -53,10 +53,7 @@ namespace AP_Project_4022.AdminPages
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < lstComplaints.Items.Count; i++)
-            {
-                lstComplaints.Items.RemoveAt(i);
-            }
+            lstComplaints.Items.Clear();
             if (search == "Username")
             {
                 SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\U\source\repos\AP_Project_4022\AP_Project_4022\database.mdf;Integrated Security=True;Connect Timeout=30");
