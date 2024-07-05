@@ -62,6 +62,7 @@ namespace AP_Project_4022.classes
             this.phoneNumber = phoneNumber;
             this.address = address;
             this.gender = gender;
+            this.SpecialService = null;
 
         }
         public static void AddCustomer(Customer customer)
