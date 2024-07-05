@@ -71,15 +71,18 @@ namespace AP_Project_4022.AdminPages
                             isDone = false;
                         }
                     }
+                    con.Close();
+                    SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\U\source\repos\AP_Project_4022\AP_Project_4022\database.mdf;Integrated Security=True;Connect Timeout=30");
+                    con1.Open();
                     if (isDone)
                     {
-                        command = "insert into RestaurantTable values('" + txtUsername.Text + "' , '" + txtPassword.Text + "' , '" + txtCity.Text + "' , '" + null + "' , '" + txtName.Text + "' , '" + null + "' , '" + null + "', '" + int.Parse(txtTable.Text) + "' , '" + txtAddress.Text + "' )";
-                        SqlCommand com1 = new SqlCommand(command, con);
+                        command = "insert into RestaurantTable values('" + txtUsername.Text + "' , '" + txtPassword.Text + "' , '" + txtCity.Text + "' , '" + null + "' , '" + txtName.Text + "' , '" + null + "' , '" + null + "', '" + int.Parse(txtTable.Text) + "' , '" + txtAddress.Text + "' , '"+ null +"')";
+                        SqlCommand com1 = new SqlCommand(command, con1);
                         com1.BeginExecuteNonQuery();
                         string message1 = "Restaurant added successfully!";
                         string title1 = "Added";
                         System.Windows.MessageBox.Show(message1, title1);
-                        con.Close();
+                        con1.Close();
                         this.Close();
                     }
                 }

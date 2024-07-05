@@ -28,9 +28,6 @@ namespace AP_Project_4022
             command = "insert into AdminTable values('"+ "abolfazl" +"', '"+ 1383 +"')";
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
-            command = "insert into AdminTable values('" + "sepehr" + "', '" + 1384 + "')";
-            SqlCommand com1 = new SqlCommand(command, con);
-            com1.BeginExecuteNonQuery();
             con.Close();
         }
 
