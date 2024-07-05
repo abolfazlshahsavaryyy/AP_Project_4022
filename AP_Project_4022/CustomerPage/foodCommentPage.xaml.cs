@@ -38,6 +38,7 @@ namespace AP_Project_4022.CustomerPage
                 replyToComment.content=contentCommentTextBox.Text;
                 foodPage.CreateFoodPage();
                 this.Close();
+                is_edit=false;
             }
             else if(is_reply)
             {
@@ -46,7 +47,20 @@ namespace AP_Project_4022.CustomerPage
                 replyToComment.reply.title = contentCommentTextBox.Text;
                 foodPage.CreateFoodPage();
                 this.Close();
+                is_reply=false;
 
+            }
+            else
+            {
+                Comment new_comment=new Comment(Comment.allcomments[Comment.allcomments.Count-1].id+1,contentCommentTextBox.Text,
+                    titleCommentTextBox.Text,new Comment(),DateTime.Now);
+                new_comment.customer_comment = Customer.currentCustomer;
+                Comment.allcomments.Add(new_comment);
+                foodPage.current_food.foodComments.Add(new_comment);
+                foodPage.CreateFoodPage();
+                this.Close();
+
+                
             }
         }
     }
