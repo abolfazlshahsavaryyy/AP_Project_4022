@@ -40,7 +40,8 @@ namespace AP_Project_4022.AdminPages
 
         private void btnSearchComplaint_Click(object sender, RoutedEventArgs e)
         {
-
+            classes.Admin.CurrentAdmin.search_Ammong_Complaints = new searchAmmongComplaints();
+            classes.Admin.CurrentAdmin.search_Ammong_Complaints.Show();
         }
 
         private void btnShowUncheckedComplaints_Click(object sender, RoutedEventArgs e)

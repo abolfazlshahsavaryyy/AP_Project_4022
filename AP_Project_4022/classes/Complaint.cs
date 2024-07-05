@@ -14,14 +14,16 @@ namespace AP_Project_4022.classes
         public Comment AdminReply { get; set; }
         public Comment CustomerComment { get; set; }
         public bool IsCheck { get; set; }
+        public string Title { get; set; }
         public static List<Complaint> allComplaints { get; set; }
         static Complaint()
         {
             allComplaints = new List<Complaint>();
         }
-        public Complaint(int id, Restaurant restaurant,  Customer customer,  Comment adminReply, Comment userMessage, bool isCheck)
+        public Complaint(int id, string title, Restaurant restaurant,  Customer customer,  Comment adminReply, Comment userMessage, bool isCheck)
         {
             Id = id;
+            Title = title;
             Restaurant = restaurant;
             Customer = customer;
             AdminReply = adminReply;
