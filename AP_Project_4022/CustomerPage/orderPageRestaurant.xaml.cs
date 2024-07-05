@@ -41,9 +41,11 @@ namespace AP_Project_4022.CustomerPage
             }
             if (foodPage.current_food.numberFood < number_food)
             {
-
+                MessageBox.Show("to much food");
+                return;
             }
             price=number_food*foodPage.current_food.price;
+            foodPage.current_food.numberFood -= number_food;
             payPage pp=new payPage();
             pp.Show();
             this.Close();
