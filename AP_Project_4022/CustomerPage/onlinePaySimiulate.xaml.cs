@@ -22,17 +22,13 @@ namespace AP_Project_4022.CustomerPage
     /// </summary>
     public partial class onlinePaySimiulate : Window
     {
+        public int code = 0;
         public onlinePaySimiulate()
         {
             InitializeComponent();
-        }
-
-        private void BuyButton_Click(object sender, RoutedEventArgs e)
-        {
-            int code=0;
             try
             {
-                
+
                 string senderEmail = "approject4022@gmail.com";
                 string appPassword = "rkzjrwjcraogcivz"; // 16-digit app password
                 string receiverEmail = Customer.currentCustomer.email;
@@ -52,7 +48,7 @@ namespace AP_Project_4022.CustomerPage
                 smtpServer.Port = 587;
                 smtpServer.Credentials = new NetworkCredential(senderEmail, appPassword);
                 smtpServer.EnableSsl = true;
-                
+
                 smtpServer.Send(mail);
                 MessageBox.Show("Email sent successfully!");
             }
@@ -60,6 +56,12 @@ namespace AP_Project_4022.CustomerPage
             {
                 MessageBox.Show("Failed to send email: " + ex.Message);
             }
+        }
+
+        private void BuyButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+           
             if (bankTextBox.Text.Length != 16)
             {
                 MessageBox.Show("bank probelm!", "warrning", MessageBoxButton.OK, MessageBoxImage.Error);

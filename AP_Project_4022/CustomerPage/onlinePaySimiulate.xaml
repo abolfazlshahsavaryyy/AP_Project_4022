@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AP_Project_4022.CustomerPage"
         mc:Ignorable="d"
-        Title="onlinePaySimiulate" Height="450" Width="800">
+        Title="onlinePaySimiulate" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Enter code that send to your email:" FontSize="20" HorizontalAlignment="Left" Height="50" Margin="11,119,0,0" VerticalAlignment="Top" Width="334"/>
         <TextBox Name="emailCodeTextBox" HorizontalAlignment="Left" FontSize="24" Height="49" Margin="24,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="308"/>
