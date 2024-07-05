@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,7 +32,8 @@ namespace AP_Project_4022.CustomerPage
         }
         private void commentButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            Customer.currentCustomer.food_comment_page=new foodCommentPage();
+            Customer.currentCustomer.food_comment_page.Show();
         }
 
         private void ratingButton_Click(object sender, RoutedEventArgs e)
@@ -116,6 +118,19 @@ namespace AP_Project_4022.CustomerPage
                 
             }
             Customer.currentCustomer.food_page.Show();
+        }
+
+        private void order_Click(object sender, RoutedEventArgs e)
+        {
+            Customer.currentCustomer.order_page_restaurant = new orderPageRestaurant();
+            Customer.currentCustomer.order_page_restaurant.nameFoodLabel.Content="food name: "+foodPage.current_food.name;
+            Customer.currentCustomer.order_page_restaurant.priceFoodLabel.Content = "food price: " + foodPage.current_food.price;
+            Customer.currentCustomer.order_page_restaurant.numberFoodLabel.Content= "food number: " + foodPage.current_food.numberFood.ToString();
+            Customer.currentCustomer.order_page_restaurant.categoryLabel.Content = "food category: " + foodPage.current_food.foodCategory;
+            Customer.currentCustomer.order_page_restaurant.Show();
+
+
+
         }
     }
 }
