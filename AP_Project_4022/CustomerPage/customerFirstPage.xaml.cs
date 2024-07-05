@@ -35,6 +35,8 @@ namespace AP_Project_4022.CustomerPage
         private void searchRestaurantButton_Click(object sender, RoutedEventArgs e)
         {
             Customer.currentCustomer.search_restaurant_page=new searchRestaurantPage();
+            Customer.currentCustomer.search_restaurant_page.filter();
+            Customer.currentCustomer.search_restaurant_page.AddButtonsToStackPanel();
             Customer.currentCustomer.search_restaurant_page.Show();
         }
 
