@@ -73,39 +73,32 @@ namespace AP_Project_4022.SigninPage
                 string.Empty,phoneNumberTextBox.Text,"",true,usernameTextBox.Text);
             try
             {
-                // Create a new MailMessage object
+                string senderEmail = "approject4022@gmail.com";
+                string appPassword = "rkzjrwjcraogcivz"; // 16-digit app password
+                string receiverEmail = emailTextBox.Text;
+                string subject = "Varify Email";
+                Random r=new Random();
+                Verify_code_email=r.Next()%90000+10000;
+                string body =Verify_code_email.ToString();
+
                 MailMessage mail = new MailMessage();
-
-                // Set the sender's address (your email)
-                mail.From = new MailAddress("abolfazlshahsavaryy@gmail.com");
-
-                // Set the recipient's address
-                mail.To.Add(emailTextBox.Text);
-
-                // Set the subject
-                mail.Subject = "verify code";
-
-                // Set the body of the email
-                Random random = new Random();
-                Verify_code_email= random.Next()%9000+1000;
-                mail.Body = Verify_code_email.ToString();
-
-                // Specify the SMTP server (this example uses Gmail's SMTP server)
                 SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
-                smtpServer.Port = 587; // Gmail uses port 587 for SMTP
-                smtpServer.Credentials = new NetworkCredential("approject4022@gmail.com", "402approject#$#ABC");
-                smtpServer.EnableSsl = true; // Enable SSL for security
 
-                // Send the email
-                //smtpServer.Send(mail);
-                MessageBox.Show(Verify_code_email.ToString());
+                mail.From = new MailAddress(senderEmail);
+                mail.To.Add(receiverEmail);
+                mail.Subject = subject;
+                mail.Body = body;
 
-                
+                smtpServer.Port = 587;
+                smtpServer.Credentials = new NetworkCredential(senderEmail, appPassword);
+                smtpServer.EnableSsl = true;
+
+                smtpServer.Send(mail);
+                MessageBox.Show("Email sent successfully!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("unknown error!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
+                MessageBox.Show("Failed to send email: " + ex.Message);
             }
             verifyEmailPage vep = new verifyEmailPage();
             vep.Show();
