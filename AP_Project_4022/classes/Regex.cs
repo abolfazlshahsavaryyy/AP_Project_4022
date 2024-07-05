@@ -11,7 +11,8 @@ namespace AP_Project_4022.classes
     {
         public static bool ValidateCustomerPassword(string password)
         {
-            string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,32}$";
+            string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,32}$";
+;
             return Regex.IsMatch(password, pattern);
         }
         public static bool ValidateName(string name)
