@@ -34,7 +34,7 @@ namespace AP_Project_4022.CustomerPage
         {
             if(goldenRadioBox.IsChecked == false && silverRadioBox.IsChecked==false && bronzeRadioBox.IsChecked==false)
             {
-                MessageBox.Show("Email sent successfully!","warrning",MessageBoxButton.OK,MessageBoxImage.Error);
+                MessageBox.Show("choose one!","warrning",MessageBoxButton.OK,MessageBoxImage.Error);
                 return;
             }
             
@@ -43,16 +43,19 @@ namespace AP_Project_4022.CustomerPage
                 check = 1;
                 onlinePaySimiulate ops= new onlinePaySimiulate();
                 ops.titleLabel.Content = "Golden  (300 toman) ";
+                ops.Show();
             }
             else if( silverRadioBox.IsChecked == true )
             {
                 check = 2;
                 onlinePaySimiulate ops = new onlinePaySimiulate();
                 ops.titleLabel.Content = "silver  (150 toman) ";
+                ops.Show();
             }
             else { check = 3;
                 onlinePaySimiulate ops = new onlinePaySimiulate();
                 ops.titleLabel.Content = "bronze  (100 toman) ";
+                ops.Show();
             }
 
         }
