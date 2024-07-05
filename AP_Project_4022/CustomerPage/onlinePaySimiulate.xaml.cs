@@ -77,19 +77,27 @@ namespace AP_Project_4022.CustomerPage
                 Customer.currentCustomer.SpecialService = CustomerSpecialService.Golden;
                 specialServicePage.check = 0;
                 MessageBox.Show("Golden Customer");
-                this.Close();
+                this.Close(); return;
             }
             if (specialServicePage.check == 2)
             {
                 Customer.currentCustomer.SpecialService = CustomerSpecialService.Silver;
                 specialServicePage.check = 0;
-                MessageBox.Show("silver Customer"); this.Close();
+                MessageBox.Show("silver Customer"); this.Close(); return;
             }
             if (specialServicePage.check == 3)
             {
                 Customer.currentCustomer.SpecialService = CustomerSpecialService.Bronze;
                 specialServicePage.check = 0;
                 MessageBox.Show("bronze Customer"); this.Close();
+                return;
+            }
+            if (orderPageRestaurant.price > 0)
+            {
+                
+                MessageBox.Show("your food price is: "+orderPageRestaurant.price.ToString());
+                orderPageRestaurant.price = -1;
+                return;
             }
 
         }
