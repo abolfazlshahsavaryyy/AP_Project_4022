@@ -10,7 +10,7 @@ namespace AP_Project_4022.classes
     {
         public int id;
         public Comment comment { get; set; }
-    //    public Customer customer { get; set; }
+        public Customer customer { get; set; }
         public Restaurant restaurant { get; set; }
         static int number_orderHistory=0;
         public int point { get; set; }
@@ -19,9 +19,9 @@ namespace AP_Project_4022.classes
         {
             allOrderHistory = new List<OrderHistory>();
         }
-        public OrderHistory(  /*Customer customer,*/ Restaurant restaurant)
+        public OrderHistory(  Customer customer, Restaurant restaurant)
         {
-          //  this.customer = customer;
+            this.customer = customer;
             this.restaurant = restaurant;
             this.point = 0;
             this.comment = new Comment();

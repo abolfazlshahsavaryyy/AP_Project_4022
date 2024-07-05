@@ -12,7 +12,7 @@ namespace AP_Project_4022.classes
         public string content { get; set; }
         public string title { get; set; }
         public Comment reply { get; set; }
- //       public Customer customer_comment {  get; set; }
+        public Customer customer_comment {  get; set; }
         public DateTime dateComment { get; set; }//date of commenting
         public static List<Comment> allcomments = new List<Comment>();
         public Comment()
