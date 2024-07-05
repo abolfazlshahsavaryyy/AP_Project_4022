@@ -40,7 +40,7 @@ namespace AP_Project_4022.SigninPage
             }
             if(!RegexValidation.ValidateCustomerPassword(passwordTextBox.Password))
             {
-                MessageBox.Show("incorrect password!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("incorrect format password!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             singinPage.temporaryCustomer.password= passwordTextBox.Password;
