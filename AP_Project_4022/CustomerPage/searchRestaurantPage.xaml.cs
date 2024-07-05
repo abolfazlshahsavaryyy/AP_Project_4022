@@ -24,17 +24,11 @@ namespace AP_Project_4022.CustomerPage
         public searchRestaurantPage()
         {
             InitializeComponent();
-            AddButtonsToStackPanel();
+           
+            
         }
-        private void AddButtonsToStackPanel()
+        public void filter()
         {
-
-            int numberOfButtons = -1;
-            Restaurant.allRestaurant.Add(new Restaurant("username", "password", "Tehran", AdmissionType.delivery, "name", 5, "address", 10));
-            Restaurant.allRestaurant.Add(new Restaurant("username1", "password1", "Kermanshah", AdmissionType.dine_in, "name1", 6, "address1", 10));
-            Restaurant.allRestaurant.Add(new Restaurant("username2", "password2", "Esfahan", AdmissionType.delivery, "name2", 3, "address2", 10));
-            Restaurant.allRestaurant.Add(new Restaurant("username3", "password3", "Tehran", AdmissionType.dine_in, "name3", 8, "address3", 10));
-            Restaurant.allRestaurant.Add(new Restaurant("username4", "password4", "Tehran", null, "name4", 2, "address4", 10));
             if (minAvgRatingCheckBox.IsChecked == false)
             {
                 if (cityTextBox.Text == string.Empty && restauranttextBox.Text == string.Empty && dineinCheckBoc.IsChecked == false && deliveryChechBox.IsChecked == false)
@@ -43,27 +37,27 @@ namespace AP_Project_4022.CustomerPage
                 }
                 if (cityTextBox.Text != string.Empty && restauranttextBox.Text == string.Empty && dineinCheckBoc.IsChecked == false && deliveryChechBox.IsChecked == false)
                 {
-                    this.restaurants = Restaurant.allRestaurant.Where(x=>x.city==cityTextBox.Text).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.city == cityTextBox.Text).ToList();
                 }
                 if (cityTextBox.Text == string.Empty && restauranttextBox.Text != string.Empty && dineinCheckBoc.IsChecked == false && deliveryChechBox.IsChecked == false)
                 {
-                    this.restaurants = Restaurant.allRestaurant.Where(x=>x.name==restauranttextBox.Text).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.name == restauranttextBox.Text).ToList();
                 }
                 if (cityTextBox.Text == string.Empty && restauranttextBox.Text == string.Empty && dineinCheckBoc.IsChecked != false && deliveryChechBox.IsChecked == false)
                 {
-                    this.restaurants = Restaurant.allRestaurant.Where(x=>x.admissionType==AdmissionType.dine_in).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.admissionType == AdmissionType.dine_in).ToList();
                 }
                 if (cityTextBox.Text == string.Empty && restauranttextBox.Text == string.Empty && dineinCheckBoc.IsChecked == false && deliveryChechBox.IsChecked != false)
                 {
-                    this.restaurants = Restaurant.allRestaurant.Where(x=>x.admissionType==AdmissionType.delivery).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.admissionType == AdmissionType.delivery).ToList();
                 }
                 if (cityTextBox.Text != string.Empty && restauranttextBox.Text != string.Empty && dineinCheckBoc.IsChecked == false && deliveryChechBox.IsChecked == false)
                 {
-                    this.restaurants = Restaurant.allRestaurant.Where(x=>x.name==restauranttextBox.Text).ToList().Where(x=>x.city==cityTextBox.Text).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.name == restauranttextBox.Text).ToList().Where(x => x.city == cityTextBox.Text).ToList();
                 }
                 if (cityTextBox.Text != string.Empty && restauranttextBox.Text == string.Empty && dineinCheckBoc.IsChecked != false && deliveryChechBox.IsChecked == false)
                 {
-                    this.restaurants = Restaurant.allRestaurant.Where(x=>x.city==cityTextBox.Text).Where(x=>x.admissionType==AdmissionType.dine_in).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.city == cityTextBox.Text).Where(x => x.admissionType == AdmissionType.dine_in).ToList();
                 }
                 if (cityTextBox.Text != string.Empty && restauranttextBox.Text == string.Empty && dineinCheckBoc.IsChecked == false && deliveryChechBox.IsChecked != false)
                 {
@@ -71,7 +65,7 @@ namespace AP_Project_4022.CustomerPage
                 }
                 if (cityTextBox.Text == string.Empty && restauranttextBox.Text != string.Empty && dineinCheckBoc.IsChecked != false && deliveryChechBox.IsChecked == false)
                 {
-                    this.restaurants = Restaurant.allRestaurant.Where(x=>x.name==restauranttextBox.Text).Where(x=>x.admissionType==AdmissionType.dine_in).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.name == restauranttextBox.Text).Where(x => x.admissionType == AdmissionType.dine_in).ToList();
                 }
                 if (cityTextBox.Text == string.Empty && restauranttextBox.Text != string.Empty && dineinCheckBoc.IsChecked == false && deliveryChechBox.IsChecked != false)
                 {
@@ -79,11 +73,11 @@ namespace AP_Project_4022.CustomerPage
                 }
                 if (cityTextBox.Text == string.Empty && restauranttextBox.Text == string.Empty && dineinCheckBoc.IsChecked != false && deliveryChechBox.IsChecked != false)
                 {
-                    this.restaurants = Restaurant.allRestaurant.Where(x=>x.admissionType==null).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.admissionType == null).ToList();
                 }
                 if (cityTextBox.Text != string.Empty && restauranttextBox.Text != string.Empty && dineinCheckBoc.IsChecked != false && deliveryChechBox.IsChecked == false)
                 {
-                    this.restaurants = Restaurant.allRestaurant.Where(x=>x.name==restauranttextBox.Text).Where(x=>x.city==cityTextBox.Text).Where(x=>x.admissionType==AdmissionType.dine_in).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.name == restauranttextBox.Text).Where(x => x.city == cityTextBox.Text).Where(x => x.admissionType == AdmissionType.dine_in).ToList();
                 }
                 if (cityTextBox.Text != string.Empty && restauranttextBox.Text != string.Empty && dineinCheckBoc.IsChecked == false && deliveryChechBox.IsChecked != false)
                 {
@@ -91,23 +85,30 @@ namespace AP_Project_4022.CustomerPage
                 }
                 if (cityTextBox.Text != string.Empty && restauranttextBox.Text == string.Empty && dineinCheckBoc.IsChecked != false && deliveryChechBox.IsChecked != false)
                 {
-                    this.restaurants = Restaurant.allRestaurant.Where(x=>x.city==cityTextBox.Text).Where(x=>x.admissionType==null).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.city == cityTextBox.Text).Where(x => x.admissionType == null).ToList();
                 }
                 if (cityTextBox.Text == string.Empty && restauranttextBox.Text != string.Empty && dineinCheckBoc.IsChecked != false && deliveryChechBox.IsChecked != false)
                 {
-                    this.restaurants = Restaurant.allRestaurant.Where(x=>x.admissionType==null).Where(x=>x.name==restauranttextBox.Text).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.admissionType == null).Where(x => x.name == restauranttextBox.Text).ToList();
                 }
-                else
+                if (cityTextBox.Text != string.Empty && restauranttextBox.Text != string.Empty && dineinCheckBoc.IsChecked != false && deliveryChechBox.IsChecked != false)
                 {
-                    this.restaurants=Restaurant.allRestaurant.Where(x=>x.name==restauranttextBox.Text).Where(x=>x.city==cityTextBox.Text).Where(x=>x.admissionType==null).ToList();
+                    this.restaurants = Restaurant.allRestaurant.Where(x => x.name == restauranttextBox.Text).Where(x => x.city == cityTextBox.Text).Where(x => x.admissionType == null).ToList();
                 }
             }
             else
             {
-                List<double> point=Restaurant.allRestaurant.Select(x=>x.averagePoint).ToList();
+                List<double> point = Restaurant.allRestaurant.Select(x => x.averagePoint).ToList();
                 point.Sort();
                 this.restaurants = Restaurant.allRestaurant.Where(x => x.averagePoint == point[0]).ToList();
             }
+        }
+        public void AddButtonsToStackPanel()
+        {
+
+            int numberOfButtons = -1;
+            
+           
 
             for (int i = 0; i < this.restaurants.Count; i++)
             {
@@ -115,7 +116,7 @@ namespace AP_Project_4022.CustomerPage
                 {
                     Content = $"{this.restaurants[i].name} | {this.restaurants[i].city} | {this.restaurants[i].adress} ",
                     Margin = new Thickness(5),
-                    
+                    Name = this.restaurants[i].userName
                     
                 };
                 button.Click += restaurantButton_Click;
@@ -129,11 +130,15 @@ namespace AP_Project_4022.CustomerPage
 
         private void filterButton_Click(object sender, RoutedEventArgs e)
         {
+            restaurantListStackPanel.Children.Clear();
             searchRestaurantPage srp = new searchRestaurantPage();
             srp.cityTextBox.Text = cityTextBox.Text;
             srp.restauranttextBox.Text= restauranttextBox.Text;
             srp.dineinCheckBoc.IsChecked=dineinCheckBoc.IsChecked;
             srp.deliveryChechBox.IsChecked = deliveryChechBox.IsChecked;
+            srp.minAvgRatingCheckBox.IsChecked = minAvgRatingCheckBox.IsChecked;
+            srp.filter();
+            srp.AddButtonsToStackPanel();
             srp.Show();
             this.Close();
            
@@ -142,6 +147,8 @@ namespace AP_Project_4022.CustomerPage
         private void restaurantButton_Click(object sender, RoutedEventArgs e)
         {
             restaurantMenuPage rmp =new restaurantMenuPage();
+            restaurantMenuPage.Restaurant_Menu = Restaurant.GetRestaurant((sender as Button).Name);
+            rmp.AddFoodMenu();
             rmp.Show();
         }
     }
