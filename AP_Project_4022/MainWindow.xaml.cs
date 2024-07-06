@@ -1,5 +1,6 @@
 ﻿using AP_Project_4022.AdminPages;
 using AP_Project_4022.classes;
+using AP_Project_4022.RestaurantPages;
 using Microsoft.Data.SqlClient;
 using System.Text;
 using System.Windows;
@@ -33,9 +34,9 @@ namespace AP_Project_4022
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            Admin.CurrentAdmin = Admin.allAdmin[0];
-            adminMenu adminMenu = new adminMenu();
-            adminMenu.Show();
+            Restaurant.currentRestaurant = new Restaurant("Sepehr", "555", "Isfahan", AdmissionType.dine_in, "Sepehr", 0, "Isf", 20);
+            Restaurant.currentRestaurant.restaurant_panel = new RestaurantPanel();
+            Restaurant.currentRestaurant.restaurant_panel.Show();
         }
 
         private void SigninButton_Click(object sender, RoutedEventArgs e)

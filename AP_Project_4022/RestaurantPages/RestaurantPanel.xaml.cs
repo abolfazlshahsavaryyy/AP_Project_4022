@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AP_Project_4022.classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,7 +56,13 @@ namespace AP_Project_4022.RestaurantPages
 
         private void btnAddFood_Click(object sender, RoutedEventArgs e)
         {
-
+            Restaurant.currentRestaurant.add_food = new AddFood();
+            btnActiveService.Visibility = Visibility.Visible;
+            btnChangeMenu.Visibility = Visibility.Visible;
+            btnChangeStock.Visibility = Visibility.Visible;
+            btnHistory.Visibility = Visibility.Visible;
+            stcChoose.Visibility = Visibility.Hidden;
+            Restaurant.currentRestaurant.add_food.Show();
         }
 
         private void btnRemoveFood_Click(object sender, RoutedEventArgs e)
