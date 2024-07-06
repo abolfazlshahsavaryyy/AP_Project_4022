@@ -48,7 +48,7 @@ namespace AP_Project_4022.AdminPages
                 System.Windows.MessageBox.Show(message, title);
                 isDone = false;
             }
-            else if(txtAdmission.Text != "dine_in" && txtAdmission.Text != "delivery")
+            else if(txtAdmission.Text != "dine_in" && txtAdmission.Text != "delivery" && txtAdmission.Text != "")
             {
                 string message = "Admission type should be dine_in or delivery!";
                 string title = "Error";
