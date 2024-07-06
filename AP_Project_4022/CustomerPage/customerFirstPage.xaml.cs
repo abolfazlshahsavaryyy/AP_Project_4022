@@ -95,8 +95,39 @@ namespace AP_Project_4022.CustomerPage
 
         private void compaintButton_Click(object sender, RoutedEventArgs e)
         {
-            Customer.currentCustomer.complaint_page=new complaintPage();
+            Complaint.allComplaints.Add(new Complaint(1, Restaurant.allRestaurant[0], Customer.currentCustomer, new Comment(), new Comment(), false));//delete
+            Complaint.allComplaints.Add(new Complaint(1, Restaurant.allRestaurant[0], Customer.currentCustomer, new Comment(), new Comment(), false));//delete
+            Complaint.allComplaints[0].CustomerComment.content = "this bad restaurant";   //delete
+            Complaint.allComplaints[1].CustomerComment.content = "bad food in restaurant";//delete
+            Complaint.allComplaints[0].AdminReply.content = "its okey man";               //delete
+            Complaint.allComplaints[0].IsCheck = true;
+
+
+            CreateComplaintPage();
             Customer.currentCustomer.complaint_page.Show();
+        }
+        public static void CreateComplaintPage()
+        {
+            Customer.currentCustomer.complaint_page= new complaintPage();
+            for(int i=0;i<Complaint.allComplaints.Count;i++)
+            {
+                complaintUserControl cuc=new complaintUserControl();
+                cuc.restaurantNameLabel.Content = Complaint.allComplaints[i].Restaurant.name;
+                if (Complaint.allComplaints[i].IsCheck == false)
+                {
+                    cuc.verifyButton.Content = "no verify";
+                }
+                else
+                {
+                    cuc.verifyButton.Content = "verify";
+                }
+                cuc.contentCommentLabel.Content = Complaint.allComplaints[i].CustomerComment.content;
+                cuc.titleCommentLabel.Content = Complaint.allComplaints[i].CustomerComment.title;
+                cuc.verifyButton.Click += Customer.currentCustomer.complaint_page.VerifyButton_Click;
+                cuc.verifyButton.Tag = Complaint.allComplaints[i].Id;
+                
+                Customer.currentCustomer.complaint_page.complaintStackPanel.Children.Add(cuc);
+            }
         }
     }
 }
