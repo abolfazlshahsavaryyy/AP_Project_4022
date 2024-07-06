@@ -9,6 +9,7 @@ namespace AP_Project_4022.classes
 {
     public class Food
     {
+        public int Id { get; set; }
         public string name { get; set; }
         public double price { get; set; }
         public double aveagePoint { get; set; }
