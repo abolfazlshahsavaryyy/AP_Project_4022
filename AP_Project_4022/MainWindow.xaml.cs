@@ -11,15 +11,103 @@ using System.Windows.Shapes;
 using AP_Project_4022.SigninPage;
 using AP_Project_4022.CustomerPage;
 using AP_Project_4022.classes;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 
 namespace AP_Project_4022
 {
+    
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        static MainWindow()
+        {
+            SqlConnection con = new SqlConnection(@"D:\AP_PROJECT\AP_PROJECT_4022\DB.MDF");
+            string command;
+            command = "SELECT * from CustomerTable";
+            SqlDataAdapter adapter = new SqlDataAdapter(command,con);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            for(int i = 0; i < data.Rows.Count; i++)
+            {
+                bool gender_customer=true;
+                string gender = data.Rows[i][8].ToString();
+                if (gender == "True")
+                {
+                    gender_customer= true;
+                }
+                else
+                {
+                    gender_customer= false;
+                }
+                Customer.allCustomers.Add(new Customer(data.Rows[i][3].ToString(), data.Rows[i][4].ToString(),
+                    data.Rows[i][5].ToString(), data.Rows[i][2].ToString(),data.Rows[i][6].ToString(),
+                    data.Rows[i][7].ToString(), gender_customer, data.Rows[i][0].ToString()));
+            }
+            SqlCommand com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            con.Open();
+
+
+            //##############################################################################3
+
+
+            con = new SqlConnection(@"D:\AP_PROJECT\AP_PROJECT_4022\DB.MDF");
+            
+            command = "SELECT * from RestauranTable";
+            adapter = new SqlDataAdapter(command, con);
+            data = new DataTable();
+            adapter.Fill(data);
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                AdmissionType? at = AdmissionType.dine_in;
+                if (data.Rows[i][3].ToString() == AdmissionType.delivery.ToString())
+                {
+                    at= AdmissionType.delivery;
+                }
+                else if(data.Rows[i][3].ToString() == AdmissionType.dine_in.ToString())
+                {
+                    at=AdmissionType.dine_in;
+                }
+                else if(data.Rows[i][3].ToString() == "NULL")
+                {
+                    at = null;
+                }
+                Restaurant.allRestaurant.Add(new Restaurant(data.Rows[i][0].ToString(), data.Rows[i][1].ToString(),
+                    data.Rows[i][2].ToString(), at, data.Rows[i][4].ToString(), int.Parse(data.Rows[i][6].ToString()),
+                    data.Rows[i][8].ToString(), int.Parse(data.Rows[i][7].ToString())));
+            }
+            com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            con.Open();
+
+            con.Close();
+
+
+            //###############################################################################
+
+            con = new SqlConnection(@"D:\AP_PROJECT\AP_PROJECT_4022\DB.MDF");
+
+            command = "SELECT * from RestauranTable";
+            adapter = new SqlDataAdapter(command, con);
+            data = new DataTable();
+            adapter.Fill(data);
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                //add comment
+            }
+            com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            con.Open();
+
+            con.Close();
+
+
+            //################################################################################################
+        }
         public MainWindow()
         {
             InitializeComponent();
