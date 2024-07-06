@@ -11,6 +11,7 @@ namespace AP_Project_4022.classes
         public int id;
         public Comment comment { get; set; }
         public Customer customer { get; set; }
+        public Food food { get; set; }
         public Restaurant restaurant { get; set; }
         static int number_orderHistory=0;
         public int point { get; set; }
