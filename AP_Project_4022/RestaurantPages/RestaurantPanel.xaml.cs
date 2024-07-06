@@ -73,7 +73,13 @@ namespace AP_Project_4022.RestaurantPages
 
         private void btnRemoveFood_Click(object sender, RoutedEventArgs e)
         {
-
+            Restaurant.currentRestaurant.remove_food = new RemoveFood();
+            btnActiveService.Visibility = Visibility.Visible;
+            btnChangeMenu.Visibility = Visibility.Visible;
+            btnChangeStock.Visibility = Visibility.Visible;
+            btnHistory.Visibility = Visibility.Visible;
+            stcChoose.Visibility = Visibility.Hidden;
+            Restaurant.currentRestaurant.remove_food.Show();
         }
     }
 }

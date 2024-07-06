@@ -38,7 +38,6 @@ namespace AP_Project_4022.RestaurantPages
             SqlDataAdapter adapter1 = new SqlDataAdapter(command, con);
             DataTable data1 = new DataTable();
             adapter1.Fill(data1);
-            var all = (from d in data1.AsEnumerable() select d).ToList();
             if (!int.TryParse(txtId.Text, out int m) || m < 0)
             {
                 string message = "Please enter valid food ID!";

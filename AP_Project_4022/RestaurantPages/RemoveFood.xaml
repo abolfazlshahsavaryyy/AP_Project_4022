@@ -18,8 +18,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="1" Text="Remove Food" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Gray" />
-        <TextBlock Grid.Row="1" Text="Enter Food Name: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="22"/>
-        <TextBox x:Name="txtName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Height="60" Margin="10"  TextAlignment="Left" FontSize="15"/>
+        <TextBlock Grid.Row="1" Text="Enter Food ID: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="22"/>
+        <TextBox x:Name="txtId" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Height="60" Margin="10"  TextAlignment="Left" FontSize="15"/>
         <Button x:Name="btnRemove" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Height="50" Content="Remove" FontSize="20" Click="btnRemove_Click"/>
     </Grid>
 </Window>
