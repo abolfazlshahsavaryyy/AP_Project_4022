@@ -28,6 +28,7 @@ namespace AP_Project_4022.classes
         public int numberTable {  get; set; }
         public string adress { get; set; }
         public int complaintNumber { get; set; }
+        public bool reserve {  get; set; }
         public static Restaurant currentRestaurant { get; set; }
         public static List<Restaurant> allRestaurant { get; set; }
         //################################################################################
@@ -58,6 +59,7 @@ namespace AP_Project_4022.classes
             this.adress = adress;
             this.complaintNumber = 0;
             this.foods = new List<Food>();
+            this.reserve = false;
         }
         public static void AddRestaurant(Restaurant restaurant)
         {
