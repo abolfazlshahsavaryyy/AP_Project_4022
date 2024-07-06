@@ -52,7 +52,8 @@ namespace AP_Project_4022.AdminPages
 
         private void btnAnswerComplaints_Click(object sender, RoutedEventArgs e)
         {
-
+            classes.Admin.CurrentAdmin.Check_Complaint = new CheckComplaint();
+            classes.Admin.CurrentAdmin.Check_Complaint.Show();
         }
 
         private void btnShowAllComplaints_Click(object sender, RoutedEventArgs e)
