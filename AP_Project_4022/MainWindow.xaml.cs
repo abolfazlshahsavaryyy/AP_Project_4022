@@ -26,6 +26,7 @@ namespace AP_Project_4022
         static MainWindow()
         {
             SqlConnection con = new SqlConnection(@"D:\AP_PROJECT\AP_PROJECT_4022\DB.MDF");
+            con.Open();
             string command;
             command = "SELECT * from CustomerTable";
             SqlDataAdapter adapter = new SqlDataAdapter(command,con);
@@ -49,14 +50,14 @@ namespace AP_Project_4022
             }
             SqlCommand com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
-            con.Open();
+            con.Close();
 
 
             //##############################################################################3
 
 
             con = new SqlConnection(@"D:\AP_PROJECT\AP_PROJECT_4022\DB.MDF");
-            
+            con.Open();
             command = "SELECT * from RestauranTable";
             adapter = new SqlDataAdapter(command, con);
             data = new DataTable();
@@ -72,7 +73,7 @@ namespace AP_Project_4022
                 {
                     at=AdmissionType.dine_in;
                 }
-                else if(data.Rows[i][3].ToString() == "NULL")
+                else if(data.Rows[i][3].ToString() == "null")
                 {
                     at = null;
                 }
@@ -82,7 +83,7 @@ namespace AP_Project_4022
             }
             com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
-            con.Open();
+            
 
             con.Close();
 
@@ -90,23 +91,105 @@ namespace AP_Project_4022
             //###############################################################################
 
             con = new SqlConnection(@"D:\AP_PROJECT\AP_PROJECT_4022\DB.MDF");
-
-            command = "SELECT * from RestauranTable";
+            con.Open();
+            command = "SELECT * from CommentTable";
             adapter = new SqlDataAdapter(command, con);
             data = new DataTable();
             adapter.Fill(data);
             for (int i = 0; i < data.Rows.Count; i++)
             {
-                //add comment
+                Comment.allcomments.Add(new Comment(int.Parse(data.Rows[i][0].ToString()), data.Rows[i][1].ToString(),
+                    data.Rows[i][2].ToString(), null, DateTime.Parse(data.Rows[i][4].ToString())));
+            }
+            for(int i = 0; i < Comment.allcomments.Count; i++)
+            {
+                if (data.Rows[i][3].ToString() != "null")
+                {
+                    Comment.allcomments[i].reply = Comment.GetComment(int.Parse(data.Rows[i][3].ToString()));
+                }
             }
             com = new SqlCommand(command, con);
             com.BeginExecuteNonQuery();
-            con.Open();
+           
 
             con.Close();
 
 
             //################################################################################################
+
+            con = new SqlConnection(@"D:\AP_PROJECT\AP_PROJECT_4022\DB.MDF");
+            con.Open();
+            command = "SELECT * from ComplaintTable";
+            adapter = new SqlDataAdapter(command, con);
+            data = new DataTable();
+            adapter.Fill(data);
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                if (data.Rows[i][3].ToString() == "null")
+                {
+                    Complaint.allComplaints.Add(new Complaint(int.Parse(data.Rows[i][0].ToString()),
+                  Restaurant.GetRestaurant(data.Rows[i][1].ToString(), true),
+                  Customer.GetCustomer(data.Rows[i][2].ToString()),
+                  null, Comment.GetComment(int.Parse(data.Rows[i][4].ToString())),
+                  true));
+                }
+                  Complaint.allComplaints.Add(new Complaint(int.Parse(data.Rows[i][0].ToString()),
+                  Restaurant.GetRestaurant(data.Rows[i][1].ToString(),true),
+                  Customer.GetCustomer(data.Rows[i][2].ToString()),
+                  Comment.GetComment(int.Parse(data.Rows[i][3].ToString())),Comment.GetComment(int.Parse(data.Rows[i][4].ToString())),
+                  true));
+
+            }
+            com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            
+
+            con.Close();
+
+
+            //##########################################################
+
+
+            con = new SqlConnection(@"D:\AP_PROJECT\AP_PROJECT_4022\DB.MDF");
+            con.Open();
+            command = "SELECT * from OrderHistoryTable";
+            adapter = new SqlDataAdapter(command, con);
+            data = new DataTable();
+            adapter.Fill(data);
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                OrderHistory.allOrderHistory.Add(new OrderHistory(Customer.GetCustomer(data.Rows[i][2].ToString()),
+                    Restaurant.GetRestaurant(data.Rows[i][3].ToString(), true), int.Parse(data.Rows[i][0].ToString()),
+                    Comment.GetComment(int.Parse(data.Rows[i][1].ToString())),new Food()));//bug
+
+            }
+            com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+            
+
+            con.Close();
+            //############################################################################################
+
+            con = new SqlConnection(@"D:\AP_PROJECT\AP_PROJECT_4022\DB.MDF");
+            con.Open();
+            command = "SELECT * from OrderHistoryTable";
+            adapter = new SqlDataAdapter(command, con);
+            data = new DataTable();
+            adapter.Fill(data);
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                List<string> m = data.Rows[i][8].ToString().Split(',').ToList();
+                Food.allFood.Add(new Food(data.Rows[i][0].ToString(),
+                    double.Parse(data.Rows[i][1].ToString()),
+                    double.Parse(data.Rows[i][2].ToString()), int.Parse(data.Rows[i][4].ToString()),
+                    new List<Comment>(), data.Rows[i][7].ToString(),m) );//bug   
+
+            }
+            com = new SqlCommand(command, con);
+            com.BeginExecuteNonQuery();
+
+
+            con.Close();
         }
         public MainWindow()
         {

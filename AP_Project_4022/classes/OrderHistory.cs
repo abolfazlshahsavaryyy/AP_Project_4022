@@ -20,7 +20,7 @@ namespace AP_Project_4022.classes
         {
             allOrderHistory = new List<OrderHistory>();
         }
-        public OrderHistory(Customer customer, Restaurant restaurant)
+        public OrderHistory(Customer customer, Restaurant restaurant,Food food)
         {
             this.customer = customer;
             this.restaurant = restaurant;
@@ -28,6 +28,14 @@ namespace AP_Project_4022.classes
             this.comment = new Comment();
             number_orderHistory++;
             this.id = number_orderHistory;
+        }
+        public OrderHistory(Customer customer, Restaurant restaurant,int id,Comment comment,Food food)
+        {
+            this.customer = customer;
+            this.restaurant= restaurant;
+            this.id = id;
+            this.comment = comment;
+
         }
         public static OrderHistory? GetOrderHistory(int id)
         {

@@ -24,6 +24,10 @@ namespace AP_Project_4022.classes
             allFood = new List<Food>();
             allFood.Add(new Food("food",10,5,1,new List<Comment>(), "",new List<string>{ "material1","material2"}));
         }
+        public Food()
+        {
+
+        }
         //add caregory and complaint class and category enum
         public Food(string name, double price, double aveagePoint, int numberFood, List<Comment> commentFood, string picturePath, List<string> foodRawMaterials)
         {
