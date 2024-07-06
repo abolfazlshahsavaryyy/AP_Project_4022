@@ -87,7 +87,8 @@ namespace AP_Project_4022.RestaurantPages
 
         private void btnHistory_Click(object sender, RoutedEventArgs e)
         {
-
+            Restaurant.currentRestaurant.history = new History();
+            Restaurant.currentRestaurant.history.Show();
         }
 
         private void btnEditFood_Click(object sender, RoutedEventArgs e)
