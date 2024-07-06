@@ -51,7 +51,13 @@ namespace AP_Project_4022.RestaurantPages
 
         private void btnEditFood_Click(object sender, RoutedEventArgs e)
         {
-
+            Restaurant.currentRestaurant.edit_food = new EditFood();
+            btnActiveService.Visibility = Visibility.Visible;
+            btnChangeMenu.Visibility = Visibility.Visible;
+            btnChangeStock.Visibility = Visibility.Visible;
+            btnHistory.Visibility = Visibility.Visible;
+            stcChoose.Visibility = Visibility.Hidden;
+            Restaurant.currentRestaurant.edit_food.Show();
         }
 
         private void btnAddFood_Click(object sender, RoutedEventArgs e)
