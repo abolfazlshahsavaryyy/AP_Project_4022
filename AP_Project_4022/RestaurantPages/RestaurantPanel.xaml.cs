@@ -36,7 +36,8 @@ namespace AP_Project_4022.RestaurantPages
 
         private void btnChangeStock_Click(object sender, RoutedEventArgs e)
         {
-
+            Restaurant.currentRestaurant.change_stock = new ChangeStock();
+            Restaurant.currentRestaurant.change_stock.Show();
         }
 
         private void btnActiveService_Click(object sender, RoutedEventArgs e)
