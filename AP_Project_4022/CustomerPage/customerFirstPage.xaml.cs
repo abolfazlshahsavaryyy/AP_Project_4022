@@ -13,9 +13,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using AP_Project_4022.CustomerPage;
 using AP_Project_4022.classes;
+using System.Data;
+using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace AP_Project_4022.CustomerPage
 {
+    
     /// <summary>
     /// Interaction logic for customerFirstPage.xaml
     /// </summary>
