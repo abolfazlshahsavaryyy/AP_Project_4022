@@ -52,7 +52,7 @@ namespace AP_Project_4022.CustomerPage
                         Button btn = new Button
                         {
                             Content = restaurantMenuPage.Restaurant_Menu.foods[j].name+" "+ restaurantMenuPage.Restaurant_Menu.foods[j].numberFood,
-                            Name= restaurantMenuPage.Restaurant_Menu.foods[j].name,
+                            Name= restaurantMenuPage.Restaurant_Menu.foods[j].name.Split()[0],
                             Height=18
                         };
                         btn.Click += foodButton_Click;
@@ -82,12 +82,7 @@ namespace AP_Project_4022.CustomerPage
             string name = (sender as Button).Name;
             Food click_food = Food.GetFood(name);
 
-            Comment.allcomments.Add(new Comment(1, "food comment content", "title food comment", new Comment(), DateTime.Now));
-            Comment.allcomments.Add(new Comment(2,"greate food amazing","good food",new Comment(),DateTime.Now));
-            Comment.allcomments.Add(new Comment(3, "this wasney grear food for me", "normal food", new Comment(), DateTime.Now));
-            Comment.allcomments.Add(new Comment(4, "no to bad it was deluses but not good restaurant", "good", new Comment(), DateTime.Now));
-            Comment.allcomments.Add(new Comment(5, "amaginz food for me I remember my chieldhood time while I eat it", "old food", new Comment(), DateTime.Now));
-            Comment.allcomments.Add(new Comment(6, "I love it its amazing", "amazing", new Comment(), DateTime.Now));
+            
             for(int i = 0; i < Comment.allcomments.Count; i++)
             {
                 Comment.allcomments[i].customer_comment = Customer.currentCustomer;

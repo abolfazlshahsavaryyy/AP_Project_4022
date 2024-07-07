@@ -51,7 +51,7 @@ namespace AP_Project_4022.CustomerPage
             price=number_food*foodPage.current_food.price;
             foodPage.current_food.numberFood -= number_food;
             payPage pp=new payPage();
-            OrderHistory oh = new OrderHistory(Customer.currentCustomer, restaurantMenuPage.Restaurant_Menu);
+            OrderHistory oh = new OrderHistory(Customer.currentCustomer, restaurantMenuPage.Restaurant_Menu,foodPage.current_food);
             oh.food = foodPage.current_food;
             OrderHistory.allOrderHistory.Add(oh);
             pp.Show();

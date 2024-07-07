@@ -46,10 +46,7 @@ namespace AP_Project_4022.CustomerPage
 
         private void orderhistoryButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderHistory.allOrderHistory.Add(new OrderHistory(Customer.currentCustomer, Restaurant.allRestaurant[0]));//delete this
-            OrderHistory.allOrderHistory.Add(new OrderHistory(Customer.currentCustomer, Restaurant.allRestaurant[0]));//delete this
-            OrderHistory.allOrderHistory[0].food = new Food("food1",12,1,2,new List<Comment>(),"",new List<string>());//delete
-            OrderHistory.allOrderHistory[1].food = new Food("food2", 12, 1, 2, new List<Comment>(), "", new List<string>());//delete
+            
             Customer.currentCustomer.order_history_page=new orderHistoryPage();
             for(int i=0;i<OrderHistory.allOrderHistory.Count;i++)
             {
@@ -99,13 +96,7 @@ namespace AP_Project_4022.CustomerPage
 
         private void compaintButton_Click(object sender, RoutedEventArgs e)
         {
-            Complaint.allComplaints.Add(new Complaint(1, Restaurant.allRestaurant[0], Customer.currentCustomer, new Comment(), new Comment(), false));//delete
-            Complaint.allComplaints.Add(new Complaint(1, Restaurant.allRestaurant[0], Customer.currentCustomer, new Comment(), new Comment(), false));//delete
-            Complaint.allComplaints[0].CustomerComment.content = "this bad restaurant";   //delete
-            Complaint.allComplaints[1].CustomerComment.content = "bad food in restaurant";//delete
-            Complaint.allComplaints[0].AdminReply.content = "its okey man";               //delete
-            Complaint.allComplaints[0].IsCheck = true;
-
+            
 
             CreateComplaintPage();
             Customer.currentCustomer.complaint_page.Show();
