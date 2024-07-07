@@ -91,7 +91,7 @@ namespace AP_Project_4022.CustomerPage
             }
             if(Comment.allcomments.Count == 0)
             {
-                Complaint.allComplaints.Add(new Complaint(Complaint.allComplaints[Complaint.allComplaints.Count - 1].Id + 1, GetRestaurantByName(restayrantNameTextBox.Text)
+                Complaint.allComplaints.Add(new Complaint(Complaint.allComplaints[Complaint.allComplaints.Count - 1].Id + 1,titleTextBox.Text, GetRestaurantByName(restayrantNameTextBox.Text)
                 , Customer.currentCustomer, new Comment(), new Comment(1, discriptionTextBox.Text,
                 titleTextBox.Text, new Comment(), DateTime.Now), false));
                 customerFirstPage.CreateComplaintPage();
@@ -101,14 +101,14 @@ namespace AP_Project_4022.CustomerPage
             }
             if(Complaint.allComplaints.Count == 0)
             {
-                Complaint.allComplaints.Add(new Complaint(1, GetRestaurantByName(restayrantNameTextBox.Text)
+                Complaint.allComplaints.Add(new Complaint(1,titleTextBox.Text, GetRestaurantByName(restayrantNameTextBox.Text)
                 , Customer.currentCustomer, new Comment(), new Comment(Comment.allcomments[Comment.allcomments.Count - 1].id + 1, discriptionTextBox.Text,
                 titleTextBox.Text, new Comment(), DateTime.Now), false));
                 customerFirstPage.CreateComplaintPage();
                 this.Close();
                 MessageBox.Show("your complaint add");return;
             }
-            Complaint.allComplaints.Add(new Complaint(Complaint.allComplaints[Complaint.allComplaints.Count - 1].Id + 1, GetRestaurantByName(restayrantNameTextBox.Text)
+            Complaint.allComplaints.Add(new Complaint(Complaint.allComplaints[Complaint.allComplaints.Count - 1].Id + 1,titleTextBox.Text, GetRestaurantByName(restayrantNameTextBox.Text)
                 , Customer.currentCustomer, new Comment(), new Comment(Comment.allcomments[Comment.allcomments.Count - 1].id + 1, discriptionTextBox.Text,
                 titleTextBox.Text, new Comment(), DateTime.Now), false));
             customerFirstPage.CreateComplaintPage();

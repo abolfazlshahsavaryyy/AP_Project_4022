@@ -268,6 +268,7 @@ namespace AP_Project_4022
                     }
 
                     Complaint.allComplaints.Add(new Complaint(int.Parse(data.Rows[i][0].ToString()),
+                        data.Rows[i][7].ToString(),
                         Restaurant.GetRestaurant(data.Rows[i][1].ToString()),
                         Customer.GetCustomer(data.Rows[i][2].ToString()),admin_reply,
                         customer_reply, bool.Parse(data.Rows[i][5].ToString())
@@ -379,7 +380,7 @@ namespace AP_Project_4022
             {
                 if (Restaurant.allRestaurant[i].userName == usernameTextBox.Text && Restaurant.allRestaurant[i].password == passwordTextBox.Password)
                 {
-                    Restaurant.currentRestaurant = null;//sepehr part
+                    Restaurant.currentRestaurant = Restaurant.allRestaurant[i];
                     return;
                 }
             }
@@ -387,7 +388,9 @@ namespace AP_Project_4022
             {
                 if (Admin.allAdmin[i].UserName == usernameTextBox.Text && Admin.allAdmin[i].Password == passwordTextBox.Password)
                 {
-                    Admin.CurrentAdmin = null;//sepehr part
+                    Admin.CurrentAdmin = Admin.allAdmin[i];
+                    Admin.CurrentAdmin.admin_Menu = new adminMenu();
+                    Admin.CurrentAdmin.admin_Menu.Show();
                     return;
                 }
             }
@@ -406,7 +409,7 @@ namespace AP_Project_4022
         {
             for(int i = 0; i < Food.allFood.Count; i++)
             {
-                if (Food.allFood[i].id == id)
+                if (Food.allFood[i].Id == id)
                 {
                     return Food.allFood[i];
                 }
