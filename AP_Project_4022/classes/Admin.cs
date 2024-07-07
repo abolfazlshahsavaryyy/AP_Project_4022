@@ -16,15 +16,15 @@ namespace AP_Project_4022.classes
         public static Admin? CurrentAdmin { get; set; }
         //########################################################################
 
-        //public adminMenu admin_Menu { get; set; }
-        //public CheckComplaint Check_Complaint { get; set; }
-        //public searchAmmongComplaints search_Ammong_Complaints { get; set; }
-        //public searchAmongRestaurants search_Among_Restaurants { get; set; }
-        //public showAllComplaints show_All_Complaints { get; set; }
-        //public showSearchComplaints show_Search_Complaints { get; set; }
-        //public showSerachRestaurant show_Serach_Restaurant { get; set; }
-        //public showUncheckedComplaints show_Un_checked_Complaints { get; set; }
-        //public Window1 AddRestaurant {get;set;}
+        public adminmenu admin_menu { get; set; }
+        public checkcomplaint check_complaint { get; set; }
+        public searchammongcomplaints search_ammong_complaints { get; set; }
+        public searchamongrestaurants search_among_restaurants { get; set; }
+        public showallcomplaints show_all_complaints { get; set; }
+        public showsearchcomplaints show_search_complaints { get; set; }
+        public showserachrestaurant show_serach_restaurant { get; set; }
+        public showuncheckedcomplaints show_un_checked_complaints { get; set; }
+        public window1 addrestaurant {get;set;}
 
         //########################################################################
         public Admin(string userName, string password)
