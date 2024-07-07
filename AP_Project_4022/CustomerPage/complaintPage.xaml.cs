@@ -71,7 +71,7 @@ namespace AP_Project_4022.CustomerPage
                 {
                     if((int)(sender as Button).Tag == Complaint.allComplaints[i].Id)
                     {
-                        MessageBox.Show(Complaint.allComplaints[i].AdminReply.content, "Admin reply");
+                        MessageBox.Show(Complaint.allComplaints[i].AdminReply, "Admin reply");
                         return;
                     }
                 }
@@ -92,7 +92,7 @@ namespace AP_Project_4022.CustomerPage
             if(Comment.allcomments.Count == 0)
             {
                 Complaint.allComplaints.Add(new Complaint(Complaint.allComplaints[Complaint.allComplaints.Count - 1].Id + 1,titleTextBox.Text, GetRestaurantByName(restayrantNameTextBox.Text)
-                , Customer.currentCustomer, new Comment(), new Comment(1, discriptionTextBox.Text,
+                , Customer.currentCustomer, "", new Comment(1, discriptionTextBox.Text,
                 titleTextBox.Text, new Comment(), DateTime.Now), false));
                 customerFirstPage.CreateComplaintPage();
                 this.Close();
@@ -102,14 +102,14 @@ namespace AP_Project_4022.CustomerPage
             if(Complaint.allComplaints.Count == 0)
             {
                 Complaint.allComplaints.Add(new Complaint(1,titleTextBox.Text, GetRestaurantByName(restayrantNameTextBox.Text)
-                , Customer.currentCustomer, new Comment(), new Comment(Comment.allcomments[Comment.allcomments.Count - 1].id + 1, discriptionTextBox.Text,
+                , Customer.currentCustomer, "", new Comment(Comment.allcomments[Comment.allcomments.Count - 1].id + 1, discriptionTextBox.Text,
                 titleTextBox.Text, new Comment(), DateTime.Now), false));
                 customerFirstPage.CreateComplaintPage();
                 this.Close();
                 MessageBox.Show("your complaint add");return;
             }
             Complaint.allComplaints.Add(new Complaint(Complaint.allComplaints[Complaint.allComplaints.Count - 1].Id + 1,titleTextBox.Text, GetRestaurantByName(restayrantNameTextBox.Text)
-                , Customer.currentCustomer, new Comment(), new Comment(Comment.allcomments[Comment.allcomments.Count - 1].id + 1, discriptionTextBox.Text,
+                , Customer.currentCustomer, "", new Comment(Comment.allcomments[Comment.allcomments.Count - 1].id + 1, discriptionTextBox.Text,
                 titleTextBox.Text, new Comment(), DateTime.Now), false));
             customerFirstPage.CreateComplaintPage();
             this.Close();

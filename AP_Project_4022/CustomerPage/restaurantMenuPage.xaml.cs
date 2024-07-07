@@ -35,36 +35,50 @@ namespace AP_Project_4022.CustomerPage
         }
         public void AddFoodMenu()
         {
+            if (restaurantMenuPage.Restaurant_Menu == null)
+            {
+                this.Close();
+                return;
+            }
             List<string> category = new List<string>();
+            if (restaurantMenuPage.Restaurant_Menu.foods.Count != 0)
+            {
+
+            
             for(int i = 0; i < restaurantMenuPage.Restaurant_Menu.foods.Count; i++)
             {
+                    if (restaurantMenuPage.Restaurant_Menu.foods[i].foodCategory == null){
+                        continue;
+                    }
                 category.Add(restaurantMenuPage.Restaurant_Menu.foods[i].foodCategory);
             }
             category = category.Distinct().ToList();
             int categoryListNumber=category.Count;
-            for (int i = 0; i < categoryListNumber; i++)
-            {
-                foodCategoryUserControl fcuc = new foodCategoryUserControl();
-                for (int j = 0; j < restaurantMenuPage.Restaurant_Menu.foods.Count; j++)
+                for (int i = 0; i < categoryListNumber; i++)
                 {
-                    if (category[i] == restaurantMenuPage.Restaurant_Menu.foods[j].foodCategory)
+                    foodCategoryUserControl fcuc = new foodCategoryUserControl();
+                    for (int j = 0; j < restaurantMenuPage.Restaurant_Menu.foods.Count; j++)
                     {
-                        Button btn = new Button
+                        if (category[i] == restaurantMenuPage.Restaurant_Menu.foods[j].foodCategory)
                         {
-                            Content = restaurantMenuPage.Restaurant_Menu.foods[j].name+" "+ restaurantMenuPage.Restaurant_Menu.foods[j].numberFood,
-                            Name= restaurantMenuPage.Restaurant_Menu.foods[j].name.Split()[0],
-                            Height=18
-                        };
-                        btn.Click += foodButton_Click;
-                        fcuc.foodListStackPanel.Children.Add(btn);
-                        fcuc.foodCategoryLabel.Content = category[i];
-                        fcuc.HorizontalAlignment = HorizontalAlignment.Center;
+                            Button btn = new Button
+                            {
+                                Content = restaurantMenuPage.Restaurant_Menu.foods[j].name + " " + restaurantMenuPage.Restaurant_Menu.foods[j].numberFood,
+                                Name = restaurantMenuPage.Restaurant_Menu.foods[j].name.Split()[0],
+                                Height = 18
+                            };
+                            btn.Click += foodButton_Click;
+                            fcuc.foodListStackPanel.Children.Add(btn);
+                            fcuc.foodCategoryLabel.Content = category[i];
+                            fcuc.HorizontalAlignment = HorizontalAlignment.Center;
+                        }
+
+
                     }
-
-
+                    fcuc.Margin = new Thickness(categoryListNumber);
+                    menuStackPanel.Children.Add(fcuc);
                 }
-                fcuc.Margin=new Thickness(categoryListNumber);
-                menuStackPanel.Children.Add(fcuc);
+                
             }
         }
 

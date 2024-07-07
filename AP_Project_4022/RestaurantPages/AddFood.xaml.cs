@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using System.Data;
 using System.IO;
 using AP_Project_4022.classes;
@@ -51,7 +51,7 @@ namespace AP_Project_4022.RestaurantPages
             }
             else
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\U\source\repos\AP_Project_4022\AP_Project_4022\database.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True");
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP_Project\AP_Project_4022\AP_Project_4022\db.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True");
                 con.Open();
                 string command;
                 command = "select * from FoodTable";
@@ -60,7 +60,8 @@ namespace AP_Project_4022.RestaurantPages
                 adapter1.Fill(data1);
                 SqlCommand com3 = new SqlCommand(command, con);
                 com3.ExecuteNonQuery();
-                command = "insert into FoodTable values('"+ data1.Rows.Count +"' , '" + txtName.Text + "' , '" + double.Parse(txtPrice.Text) + "' , '" + 0 + "' , '" + null + "' , '" + int.Parse(txtStock.Text) + "' , '" + null + "' , '" + txtCategory.Text + "' , '" + null + "' , '" + txtMaterials.Text + "')";
+                int id = data1.Rows.Count;id++;
+                command = "insert into FoodTable values('"+ id +"' , '" + txtName.Text + "' , '" + double.Parse(txtPrice.Text) + "' , '" + 0 + "' , '" + null + "' , '" + int.Parse(txtStock.Text) + "' , '" + null + "' , '" + txtCategory.Text + "' , '" + null + "' , '" + txtMaterials.Text + "')";
                 SqlCommand com = new SqlCommand(command, con);
                 com.ExecuteNonQuery();
                 command = "select * from RestaurantTable";

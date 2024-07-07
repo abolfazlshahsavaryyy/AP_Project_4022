@@ -11,7 +11,7 @@ namespace AP_Project_4022.classes
         public int Id { get; set; }
         public Restaurant Restaurant { get; set; }
         public Customer Customer { get; set; }
-        public Comment AdminReply { get; set; }
+        public string AdminReply { get; set; }
         public Comment CustomerComment { get; set; }
         public string title {  get; set; }
         public bool IsCheck { get; set; }
@@ -21,7 +21,7 @@ namespace AP_Project_4022.classes
         {
             allComplaints = new List<Complaint>();
         }
-        public Complaint(int id, string title, Restaurant restaurant,  Customer customer,  Comment adminReply, Comment userMessage, bool isCheck)
+        public Complaint(int id, string title, Restaurant restaurant,  Customer customer,  string adminReply, Comment userMessage, bool isCheck)
         {
             Id = id;
             Title = title;

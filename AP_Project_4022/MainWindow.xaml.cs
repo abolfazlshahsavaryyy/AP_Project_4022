@@ -68,7 +68,7 @@ namespace AP_Project_4022
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warrning");
+                MessageBox.Show(ex.Message, "Warrning1");
             }
 
 
@@ -108,7 +108,7 @@ namespace AP_Project_4022
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warrning");
+                MessageBox.Show(ex.Message, "Warrning2");
             }
 
 
@@ -169,7 +169,7 @@ namespace AP_Project_4022
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warrning");
+                MessageBox.Show(ex.Message, "Warrning3");
             }
 
 
@@ -202,17 +202,32 @@ namespace AP_Project_4022
                         at=null;
                     }
                     List<int> allrating = new List<int>();
-                    string[] allrating_string = data.Rows[i][5].ToString().Split(',');
-                    for(int j=0;j<allrating_string.Length;j++)
+                    string[] allrating_string;
+                    string allrating_new_string = data.Rows[i][5].ToString();
+                    if (data.Rows[i][5].ToString() != "")
                     {
-                        allrating.Add(int.Parse(allrating_string[j]));
+                        allrating_string = data.Rows[i][5].ToString().Split(',');
+                        for (int j = 0; j < allrating_string.Length; j++)
+                        {
+                            allrating.Add(int.Parse(allrating_string[j]));
+                        }
                     }
+                    double avg = -1;
+                    if (allrating.Count == 0)
+                    {
+                        avg = 0;
+                    }
+                    else
+                    {
+                        avg = allrating.Average();
+                    }
+                    
                     Restaurant.allRestaurant.Add(new Restaurant(data.Rows[i][0].ToString(),
                         data.Rows[i][1].ToString(),
                         data.Rows[i][2].ToString(),
                         at,
                         data.Rows[i][4].ToString(),
-                        allrating.Average(),
+                        avg,
                         data.Rows[i][8].ToString(),
                         int.Parse(data.Rows[i][7].ToString())
                         ));
@@ -220,14 +235,21 @@ namespace AP_Project_4022
                     int index = Restaurant.allRestaurant.Count - 1;
                     Restaurant.allRestaurant[index].allrating=allrating;
                     List<Food> foods=new List<Food>();
-                    string[] food_id = data.Rows[i][9].ToString().Split(',');
-                    for(int j = 0; j < food_id.Length; j++)
+                    if (data.Rows[i][9].ToString() != "" )
                     {
-                        if (food_id[j] == "")
+                        string[] food_id = data.Rows[i][9].ToString().Split(',');
+                        for (int j = 0; j < food_id.Length; j++)
                         {
-                            break;
+                            if (food_id[j] == "")
+                            {
+                                break;
+                            }
+                            foods.Add(GetFood(int.Parse(food_id[j])));
                         }
-                        foods.Add(GetFood(int.Parse(food_id[j])));
+                    }
+                    else
+                    {
+                        
                     }
                     Restaurant.allRestaurant[i].foods=foods;
                     Restaurant.allRestaurant[i].reserve = bool.Parse(data.Rows[i][11].ToString());
@@ -240,7 +262,7 @@ namespace AP_Project_4022
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warrning");
+                MessageBox.Show(ex.Message, "Warrning4");
             }
 
             //######################################################################
@@ -255,10 +277,10 @@ namespace AP_Project_4022
                 adapter.Fill(data);
                 for (int i = 0; i < data.Rows.Count; i++)
                 {
-                    Comment? admin_reply = null;
+                    string admin_reply = "";
                     if (data.Rows[i][3].ToString() != "")
                     {
-                        admin_reply = GetComment(int.Parse(data.Rows[i][3].ToString()));
+                        admin_reply = data.Rows[i][3].ToString();
                     }
 
                     Comment? customer_reply = null;
@@ -286,39 +308,14 @@ namespace AP_Project_4022
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warrning");
+                MessageBox.Show(ex.Message, "Warrning5");
             }
 
             
 
             //#########################################################
 
-            try
-            {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP_Project\AP_Project_4022\AP_Project_4022\db.mdf;Integrated Security=True;Connect Timeout=30");
-                con.Open();
-
-                string command = "SELECT * from RestaurantTable";
-                SqlDataAdapter adapter = new SqlDataAdapter(command, con);
-                DataTable data = new DataTable();
-                adapter.Fill(data);
-                for (int i = 0; i < data.Rows.Count; i++)
-                {
-                    if (data.Rows[i][10].ToString() == "")
-                    {
-                        continue;
-                    }
-                    Restaurant.allRestaurant[i].complaintNumber = int.Parse(data.Rows[i][10].ToString());
-                }
-
-                SqlCommand com = new SqlCommand(command, con);
-                com.BeginExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Warrning");
-            }
+            
 
 
             //###############################################################
@@ -348,7 +345,7 @@ namespace AP_Project_4022
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warrning");
+                MessageBox.Show(ex.Message, "Warrning6");
             }
 
 
@@ -381,6 +378,8 @@ namespace AP_Project_4022
                 if (Restaurant.allRestaurant[i].userName == usernameTextBox.Text && Restaurant.allRestaurant[i].password == passwordTextBox.Password)
                 {
                     Restaurant.currentRestaurant = Restaurant.allRestaurant[i];
+                    Restaurant.currentRestaurant.restaurant_panel = new RestaurantPanel();
+                    Restaurant.currentRestaurant.restaurant_panel.Show();
                     return;
                 }
             }

@@ -38,7 +38,7 @@ namespace AP_Project_4022.AdminPages
             }
             else
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\U\source\repos\AP_Project_4022\AP_Project_4022\database.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP_Project\AP_Project_4022\AP_Project_4022\db.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True");
                 con.Open();
                 string command;
                 command = "select * from ComplaintTable";
@@ -46,7 +46,7 @@ namespace AP_Project_4022.AdminPages
                 DataTable data = new DataTable();
                 adapter.Fill(data);
                 SqlCommand com = new SqlCommand(command, con);
-                com.BeginExecuteNonQuery();
+                com.ExecuteNonQuery();
                 var wanted = (from d in data.AsEnumerable()
                              where d.Field<int>("Id") == int.Parse(txtName.Text)
                              select d).ToList();
