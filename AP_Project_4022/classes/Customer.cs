@@ -49,6 +49,7 @@ namespace AP_Project_4022.classes
         static Customer()
         {
             allCustomers = new List<Customer>();
+            
         }
 
         public Customer(string firstName, string lastName, string email, string password, string phoneNumber, string address, bool gender, string username) 
@@ -61,6 +62,7 @@ namespace AP_Project_4022.classes
             this.phoneNumber = phoneNumber;
             this.address = address;
             this.gender = gender;
+            this.SpecialService = null;
 
         }
         public static void AddCustomer(Customer customer)

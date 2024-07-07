@@ -1,6 +1,8 @@
-﻿using System;
+﻿using AP_Project_4022.classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+//using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,6 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace AP_Project_4022.CustomerPage
 {
@@ -22,11 +27,117 @@ namespace AP_Project_4022.CustomerPage
         public profilePage()
         {
             InitializeComponent();
+            AddInfoToStackPanel();
+        }
+        public void AddInfoToStackPanel()
+        {
+            //for (int i = 1; i <= 10; i++)
+            //{
+            //    Label label = new Label
+            //    {
+            //        Content = $"Label {i}",
+            //        Margin = new Thickness(5)
+            //    };
+            //    customerInformationStackPanel.Children.Add(label);
+            //}
+            Label l1 = new Label
+            {
+                Content = $"first name: {Customer.currentCustomer.firstName}",
+                Margin = new Thickness(7)
+
+            };
+            Label l2 = new Label
+            {
+                Content = $"last name: {Customer.currentCustomer.lastName}",
+                Margin = new Thickness(7)
+            };
+            Label l3 = new Label
+            {
+                Content = $"username: {Customer.currentCustomer.username}",
+                Margin = new Thickness(7)
+            };
+            Label l4 = new Label
+            {
+                Content = $"phone number: {Customer.currentCustomer.phoneNumber}",
+                Margin = new Thickness(7)
+            };
+            Label l5 = new Label
+            {
+                Content = $"address: {Customer.currentCustomer.address}",
+                Margin = new Thickness(7)
+            };
+            string gender;
+            if (Customer.currentCustomer.gender == true)
+            {
+                gender = "mail";
+            }
+            else
+            {
+                gender = "femail";
+            }
+            Label l6 = new Label
+            {
+                Content = $"gender: {gender}",
+                Margin = new Thickness(7)
+            };
+            Label l7 = new Label
+            {
+                Content = $"email: {Customer.currentCustomer.email}",
+                Margin = new Thickness(7)
+            };
+            customerInformationStackPanel.Children.Add(l1);
+            customerInformationStackPanel.Children.Add(l2);
+            customerInformationStackPanel.Children.Add(l3);
+            customerInformationStackPanel.Children.Add(l4);
+            customerInformationStackPanel.Children.Add(l5);
+            
+            customerInformationStackPanel.Children.Add(l6);
+            customerInformationStackPanel.Children.Add(l7);
+
+
+
+        }
+        
+
+        private void editButton_Click(object sender, RoutedEventArgs e)
+        {
+            emailLabel.Visibility = Visibility.Visible;
+            addressLabel.Visibility = Visibility.Visible;
+            emailTextBox.Visibility = Visibility.Visible;
+            addrressTextBox.Visibility = Visibility.Visible;
+            changeButton.Visibility = Visibility.Visible;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void specialServiceButton_Click(object sender, RoutedEventArgs e)
         {
+            Customer.currentCustomer.special_service_page=new specialServicePage();
+            Customer.currentCustomer.special_service_page.Show();
+        }
+        
+        private void changeButton_Click(object sender, RoutedEventArgs e)
+        {
+            string change_email=emailTextBox.Text.Trim();
+            if(RegexValidation.ValidateEmail(emailTextBox.Text))
+            {
+                Customer.currentCustomer.email=emailTextBox.Text;
+            }
+            else
+            {
+                MessageBox.Show("no good format for email","Warrning",MessageBoxButton.OK,MessageBoxImage.Error);
+                return;
+            }
+            Customer.currentCustomer.address=addrressTextBox.Text.Trim();
+            
+            SqlConnection con =new  SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP_Project\AP_Project_4022\AP_Project_4022\db.mdf;Integrated Security=True;Connect Timeout=30");
+            con.Open();
+            string command = "UPDATE CustomerTable SET Email = '" + Customer.currentCustomer.email+ "', Address = '" + Customer.currentCustomer.address+ "' WHERE UserName='" + Customer.currentCustomer.username.Trim() + "'";
+            SqlCommand com= new SqlCommand(command, con);
+            com.ExecuteNonQuery();
+            con.Close();
 
+            profilePage pp=new profilePage();
+            this.Close();
+            pp.Show();
         }
     }
 }

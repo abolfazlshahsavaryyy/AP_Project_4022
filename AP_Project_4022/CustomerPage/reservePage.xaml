@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="reservePage" Height="450" Width="800">
     <Grid>
-        <Label Content="reserve page" FontSize="20" HorizontalAlignment="Center" Height="35" Margin="0,29,0,0" VerticalAlignment="Top" Width="158"/>
+        <Label Name="tableNumberLabel" Content="reserve page" FontSize="20" HorizontalAlignment="Center" Height="35" Margin="0,29,0,0" VerticalAlignment="Top" Width="158"/>
         <Label Content="restaurant number of table:[x]" FontSize="20" HorizontalAlignment="Left" Height="52" Margin="102,120,0,0" VerticalAlignment="Top" Width="571"/>
         <Button Name="reserveButton" Content="reserve" FontSize="25" HorizontalAlignment="Left" Height="79" Margin="506,263,0,0" VerticalAlignment="Top" Width="167" Click="reserveButton_Click"/>
-        <TextBox Name="numTabelTextBox" FontSize="25" HorizontalAlignment="Left" Height="79" Margin="121,263,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="279"/>
+        <TextBox Name="numTabelTextBox" FontSize="25" HorizontalAlignment="Left" Height="79" Margin="121,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="279"/>
 
     </Grid>
 </Window>

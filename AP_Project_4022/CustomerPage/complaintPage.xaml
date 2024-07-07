@@ -8,15 +8,18 @@
         Title="complaintPage" Height="450" Width="800"
          WindowStartupLocation="CenterScreen">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="291" Margin="64,67,0,0" VerticalAlignment="Top" Width="306"/>
         <Label Content="list complaint" FontSize="24" HorizontalAlignment="Left" Height="43" Margin="128,19,0,0" VerticalAlignment="Top" Width="165"/>
         <Button Name="addComplaintButton" Content="add compaint" FontSize="20" HorizontalAlignment="Left" Height="33" Margin="509,358,0,0" VerticalAlignment="Top" Width="175" Click="addComplaintButton_Click"/>
-        <Label Content="restaurant name" Visibility="Collapsed" FontSize="16" HorizontalAlignment="Left" Height="29" Margin="402,44,0,0" VerticalAlignment="Top" Width="194"/>
+        <Label Name="restaurantLebel" Content="restaurant name" Visibility="Collapsed" FontSize="16" HorizontalAlignment="Left" Height="29" Margin="402,44,0,0" VerticalAlignment="Top" Width="194"/>
         <TextBox Name="restayrantNameTextBox" Visibility="Collapsed" FontSize="16" HorizontalAlignment="Left" Height="32" Margin="509,78,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194"/>
-        <Label Content="title" Visibility="Collapsed" FontSize="16" HorizontalAlignment="Left" Height="29" Margin="400,135,0,0" VerticalAlignment="Top" Width="194"/>
-        <Label Content="discription" Visibility="Collapsed" FontSize="16" HorizontalAlignment="Left" Height="29" Margin="400,233,0,0" VerticalAlignment="Top" Width="194"/>
+        <Label Name="titleLabel" Content="title" Visibility="Collapsed" FontSize="16" HorizontalAlignment="Left" Height="29" Margin="400,135,0,0" VerticalAlignment="Top" Width="194"/>
+        <Label Name="descriptionLabel" Content="description" Visibility="Collapsed" FontSize="16" HorizontalAlignment="Left" Height="29" Margin="400,233,0,0" VerticalAlignment="Top" Width="194"/>
         <TextBox Name="titleTextBox" Visibility="Collapsed" HorizontalAlignment="Left" FontSize="16" Height="32" Margin="509,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194"/>
         <TextBox Name="discriptionTextBox" Visibility="Collapsed" FontSize="16" HorizontalAlignment="Left" Height="32" Margin="509,267,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="194"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="362" Margin="47,62,0,0" VerticalAlignment="Top" Width="353">
+            <StackPanel Name="complaintStackPanel" Height="5671" Width="328"/>
+        </ScrollViewer>
+        <Button Content="submit" FontSize="14" Name="submitButton" Visibility="Collapsed" HorizontalAlignment="Left" Height="33" Margin="721,358,0,0" VerticalAlignment="Top" Width="47" Click="submitButton_Click"/>
 
     </Grid>
 </Window>

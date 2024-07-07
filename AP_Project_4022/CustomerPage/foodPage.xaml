@@ -8,9 +8,12 @@
         Title="foodPage" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="261" Margin="131,67,0,0" VerticalAlignment="Top" Width="533"/>
-        <Button Content="comment" FontSize="18" HorizontalAlignment="Left" Height="45" Margin="180,361,0,0" VerticalAlignment="Top" Width="85"/>
-        <Button Content="rating" FontSize="20" HorizontalAlignment="Left" Height="45" Margin="527,361,0,0" VerticalAlignment="Top" Width="85"/>
+        <Button x:Name="commentButton" Content="comment" FontSize="18" HorizontalAlignment="Left" Height="45" Margin="180,361,0,0" VerticalAlignment="Top" Width="85" Click="commentButton_Click"/>
+        <Button x:Name="ratingButton" Content="rating" FontSize="20" HorizontalAlignment="Left" Height="45" Margin="527,361,0,0" VerticalAlignment="Top" Width="85" Click="ratingButton_Click"/>
+        <ScrollViewer HorizontalAlignment="Center" Height="264" Margin="0,64,0,0" VerticalAlignment="Top" Width="780">
+            <StackPanel Name="commentFoodStackPanel" Height="2866" Width="588"/>
+        </ScrollViewer>
+        <Button x:Name="order" Content="order" FontSize="20" HorizontalAlignment="Left" Height="45" Margin="359,361,0,0" VerticalAlignment="Top" Width="89" Click="order_Click"/>
 
     </Grid>
 </Window>

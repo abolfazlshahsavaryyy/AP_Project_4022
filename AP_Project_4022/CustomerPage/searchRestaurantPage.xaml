@@ -8,14 +8,12 @@
         Title="searchRestaurantPage" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <StackPanel Name="restaurantListStackPanel" HorizontalAlignment="Left" Height="303" Margin="44,90,0,0" VerticalAlignment="Top" Width="474">
-            <Button Name="restaurantButton" Content="restaurant name|city|address|" Height="41" Width="475" Click="restaurantButton_Click" />
-        </StackPanel>
+        <StackPanel Name="restaurantListStackPanel" HorizontalAlignment="Left" Height="303" Margin="44,90,0,0" VerticalAlignment="Top" Width="474"/>
         <Label Content="restaurant list" FontSize="18" HorizontalAlignment="Left" Height="31" Margin="214,35,0,0" VerticalAlignment="Top" Width="166"/>
         <Label Content="city name" FontSize="20" HorizontalAlignment="Left" Height="38" Margin="573,67,0,0" VerticalAlignment="Top" Width="185"/>
         <Label Content="restaurant name" FontSize="20" HorizontalAlignment="Left" Height="38" Margin="573,179,0,0" VerticalAlignment="Top" Width="185"/>
-        <TextBox Name="cityTextBox" HorizontalAlignment="Left" FontSize="20" Height="47" Margin="573,127,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="185"/>
-        <TextBox Name="restauranttextBox" HorizontalAlignment="Left" Height="46" FontSize="20" Margin="573,242,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="185"/>
+        <TextBox Name="cityTextBox" HorizontalAlignment="Left" FontSize="20" Height="47" Margin="573,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185"/>
+        <TextBox Name="restauranttextBox" HorizontalAlignment="Left" Height="46" FontSize="20" Margin="573,242,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185"/>
         <CheckBox Name="dineinCheckBoc" Content="dine in" FontSize="15" HorizontalAlignment="Left" Height="21" Margin="573,293,0,0" VerticalAlignment="Top" Width="86"/>
         <CheckBox Name="deliveryChechBox" Content="delivery" FontSize="15" HorizontalAlignment="Left" Height="21" Margin="672,293,0,0" VerticalAlignment="Top" Width="86"/>
         <CheckBox Name="minAvgRatingCheckBox" Content="min avg rating" FontSize="15" HorizontalAlignment="Left" Height="26" Margin="573,339,0,0" VerticalAlignment="Top" Width="167"/>

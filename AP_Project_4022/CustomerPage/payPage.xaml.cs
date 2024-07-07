@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace AP_Project_4022.CustomerPage
 {
@@ -22,6 +25,22 @@ namespace AP_Project_4022.CustomerPage
         public payPage()
         {
             InitializeComponent();
+        }
+
+        private void bayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(onlineCheckBox.IsChecked == true)
+            {
+                onlinePaySimiulate ops=new onlinePaySimiulate();
+                ops.titleLabel.Content ="price of buy: "+ orderPageRestaurant.price.ToString();
+                ops.Show();
+                this.Close();
+            }
+            if(cashCheckBox.IsChecked == true)
+            {
+                MessageBox.Show("your order record");
+                this.Close();
+            }
         }
     }
 }

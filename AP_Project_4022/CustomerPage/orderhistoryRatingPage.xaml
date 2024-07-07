@@ -8,7 +8,7 @@
         Title="orderhistoryRatingPage" Height="450" Width="800"
          WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Name="AddCommentButyon"  FontSize="24" Content="add comment" HorizontalAlignment="Center" Height="90" Margin="0,303,0,0" VerticalAlignment="Top" Width="204"/>
+        <Button Name="AddCommentButyon"  FontSize="24" Content="add comment" HorizontalAlignment="Center" Height="90" Margin="0,303,0,0" VerticalAlignment="Top" Width="204" Click="AddCommentButyon_Click"/>
         <Label  Content="enter rating" FontSize="20" Margin="212,71,233,285"/>
         <TextBox Name="commentContentTextBox" FontSize="20" TextWrapping="Wrap" Text="TextBox" Margin="212,192,232,162"/>
     </Grid>

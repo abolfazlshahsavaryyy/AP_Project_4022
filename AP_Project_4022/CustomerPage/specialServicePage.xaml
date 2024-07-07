@@ -11,6 +11,6 @@
         <RadioButton x:Name="goldenRadioBox" Content="golden ( 300t | 15 reserve| 3 hou | 15min punish )" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="91,37,0,0" VerticalAlignment="Top" Width="529"/>
         <RadioButton x:Name="silverRadioBox" Content="silver ( 150t |  5 reserve| 90min | 30min punish )" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="91,102,0,0" VerticalAlignment="Top" Width="529"/>
         <RadioButton x:Name="bronzeRadioBox" Content="bronze ( 100t |  2 reserve| 60min | 30min punish )" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="91,177,0,0" VerticalAlignment="Top" Width="529"/>
-        <Button x:Name="payButton" Content="pay" FontSize="30" HorizontalAlignment="Left" Height="61" Margin="91,303,0,0" VerticalAlignment="Top" Width="183"/>
+        <Button x:Name="payButton" Content="pay" FontSize="30" HorizontalAlignment="Left" Height="61" Margin="91,303,0,0" VerticalAlignment="Top" Width="183" Click="payButton_Click"/>
     </Grid>
 </Window>

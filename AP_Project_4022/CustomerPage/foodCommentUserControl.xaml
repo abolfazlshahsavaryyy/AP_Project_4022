@@ -4,14 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AP_Project_4022.CustomerPage"
-             mc:Ignorable="d" d:DesignWidth="800" Height="225">
-    <Grid Margin="0,0,0,10">
-        <Button Name="editButton" Content="edit" FontSize="18" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="92"/>
-        <Button Name="replyButton" Content="reply" FontSize="18" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="92" Margin="0,134,0,0"/>
-        <Button Name="deleteButton" Content="delete" FontSize="18" HorizontalAlignment="Left" Height="61" VerticalAlignment="Top" Width="92" Margin="0,68,0,0"/>
-        <Button Name="ratingButton" Content="rating" FontSize="18" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="129" Margin="661,0,0,0"/>
-        <Button Name="usernameButton" Content="username" FontSize="18" HorizontalAlignment="Left" Height="142" VerticalAlignment="Top" Width="129" Margin="661,73,0,0"/>
-        <Label Name="titleLabel" FontSize="20" Content="title" HorizontalAlignment="Left" Height="58" Margin="97,10,0,0" VerticalAlignment="Top" Width="559"/>
-        <Label Name="ContentLabel" FontSize="20" Content="content" HorizontalAlignment="Left" Height="132" Margin="97,73,0,0" VerticalAlignment="Top" Width="559"/>
+             mc:Ignorable="d" Height="169" Width="552">
+    <Grid Margin="0,0,0,10" HorizontalAlignment="Left" Width="549">
+        <Button Name="editButton" Content="edit" FontSize="18" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="92"/>
+        <Button Name="replyButton" Content="reply" FontSize="18" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="92" Margin="0,115,0,0"/>
+        <Button Name="deleteButton" Content="delete" FontSize="18" HorizontalAlignment="Left" Height="49" VerticalAlignment="Center" Width="92"/>
+        <Button Name="ratingButton" Content="rating" FontSize="18" HorizontalAlignment="Left" Height="49" VerticalAlignment="Center" Width="82" Margin="464,0,0,0"/>
+        <Button Name="usernameButton" Content="username" FontSize="18" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="82" Margin="464,110,0,0"/>
+        <Label Name="titleLabel" FontSize="20" Content="title" HorizontalAlignment="Left" Height="38" Margin="97,10,0,0" VerticalAlignment="Top" Width="362"/>
+        <Button Name="ContentLabel" FontSize="20" Content="content" HorizontalAlignment="Left" Height="104" Margin="97,55,0,0" VerticalAlignment="Top" Width="362"/>
+        <Button x:Name="dataTimeButton" Content="date time" FontSize="18" HorizontalAlignment="Left" Height="48" Margin="464,0,0,0" VerticalAlignment="Top" Width="82"/>
     </Grid>
 </UserControl>
