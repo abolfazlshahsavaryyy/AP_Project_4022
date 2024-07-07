@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
- using AP_Project_4022.CustomerPage;
+using AP_Project_4022.CustomerPage;
 
 namespace AP_Project_4022.classes
 {
@@ -62,7 +62,7 @@ namespace AP_Project_4022.classes
             this.phoneNumber = phoneNumber;
             this.address = address;
             this.gender = gender;
-            this.SpecialService = null;
+
         }
         public static void AddCustomer(Customer customer)
         {
@@ -99,5 +99,5 @@ namespace AP_Project_4022.classes
             }
             return null;
         }
-    } 
+    }
 }

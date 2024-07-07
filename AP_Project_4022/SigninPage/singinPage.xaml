@@ -1,0 +1,25 @@
+﻿<Window x:Class="AP_Project_4022.SigninPage.singinPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AP_Project_4022.SigninPage"
+        mc:Ignorable="d"
+        Title="singinPage" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="information" FontSize="20" HorizontalAlignment="Center" Height="34" Margin="0,10,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label Content="first name" FontSize="18" HorizontalAlignment="Left" Height="35" Margin="71,92,0,0" VerticalAlignment="Top" Width="228"/>
+        <Label Content="last name" FontSize="18" HorizontalAlignment="Left" Height="35" Margin="71,132,0,0" VerticalAlignment="Top" Width="228"/>
+        <Label Content="phone number" FontSize="18" HorizontalAlignment="Left" Height="35" Margin="71,172,0,0" VerticalAlignment="Top" Width="228"/>
+        <Label Content="email" FontSize="18" HorizontalAlignment="Left" Height="35" Margin="71,207,0,0" VerticalAlignment="Top" Width="228"/>
+        <Label Content="username" FontSize="18" HorizontalAlignment="Left" Height="35" Margin="71,247,0,0" VerticalAlignment="Top" Width="228"/>
+        <TextBox Name="firstNameTextBox" HorizontalAlignment="Left" FontSize="18" Height="35" Margin="362,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292"/>
+        <TextBox Name="lastNameTextBox" HorizontalAlignment="Left" FontSize="18" Height="35" Margin="362,132,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292"/>
+        <TextBox Name="phoneNumberTextBox" HorizontalAlignment="Left" FontSize="18" Height="35" Margin="362,172,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292"/>
+        <TextBox Name="emailTextBox" HorizontalAlignment="Left" FontSize="18" Height="35" Margin="362,207,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292"/>
+        <TextBox Name="usernameTextBox" HorizontalAlignment="Left" FontSize="18" Height="35" Margin="362,247,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="292"/>
+        <Button Name="continueButton" Content="continue" FontSize="24" HorizontalAlignment="Left" Height="55" Margin="245,336,0,0" VerticalAlignment="Top" Width="263" Click="continueButton_Click"/>
+
+    </Grid>
+</Window>

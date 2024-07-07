@@ -1,0 +1,16 @@
+﻿<Window x:Class="AP_Project_4022.CustomerPage.orderHistoryCommentpage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AP_Project_4022.CustomerPage"
+        mc:Ignorable="d"
+        Title="orderHistoryCommentpage" Height="450" Width="800"
+         WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button Name="AddCommentButyon"  FontSize="24" Content="add comment" HorizontalAlignment="Center" Height="90" Margin="0,303,0,0" VerticalAlignment="Top" Width="204"/>
+        <Label  Content="enter comment" FontSize="20" Margin="212,71,233,285"/>
+        <TextBox Name="commentContentTextBox" FontSize="20" TextWrapping="Wrap" Text="TextBox" Margin="212,192,232,162"/>
+
+    </Grid>
+</Window>
