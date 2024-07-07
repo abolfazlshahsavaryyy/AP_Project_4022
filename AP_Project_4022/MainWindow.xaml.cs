@@ -360,40 +360,30 @@ namespace AP_Project_4022
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void SigninButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            if(usernameTextBox.Text==string.Empty || passwordTextBox.Password==string.Empty)
+            if (usernameTextBox.Text == string.Empty || passwordTextBox.Password == string.Empty)
             {
                 MessageBox.Show("no argument can be empty!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            for(int i = 0; i < Customer.allCustomers.Count; i++)
+            for (int i = 0; i < Customer.allCustomers.Count; i++)
             {
-                if (Customer.allCustomers[i].username==usernameTextBox.Text && Customer.allCustomers[i].password == passwordTextBox.Password)
+                if (Customer.allCustomers[i].username == usernameTextBox.Text && Customer.allCustomers[i].password == passwordTextBox.Password)
                 {
                     Customer.currentCustomer = Customer.allCustomers[i];
-                    Customer.currentCustomer.customer_first_page=new customerFirstPage();
+                    Customer.currentCustomer.customer_first_page = new customerFirstPage();
                     Customer.currentCustomer.customer_first_page.Show();
                     return;
                 }
             }
-            for(int i=0;i<Restaurant.allRestaurant.Count;i++)
+            for (int i = 0; i < Restaurant.allRestaurant.Count; i++)
             {
-                if (Restaurant.allRestaurant[i].userName==usernameTextBox.Text && Restaurant.allRestaurant[i].password == passwordTextBox.Password)
+                if (Restaurant.allRestaurant[i].userName == usernameTextBox.Text && Restaurant.allRestaurant[i].password == passwordTextBox.Password)
                 {
                     Restaurant.currentRestaurant = null;//sepehr part
                     return;
                 }
             }
-            for(int i=0;i<Admin.allAdmin.Count;i++)
+            for (int i = 0; i < Admin.allAdmin.Count; i++)
             {
                 if (Admin.allAdmin[i].UserName == usernameTextBox.Text && Admin.allAdmin[i].Password == passwordTextBox.Password)
                 {
@@ -403,8 +393,15 @@ namespace AP_Project_4022
             }
             MessageBox.Show("user not exists!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             return;
+        }
+
+        private void SigninButton_Click(object sender, RoutedEventArgs e)
+        {
+            singinPage sp = new singinPage(); sp.Show();
 
         }
+
+        
         public static Food? GetFood(int id)
         {
             for(int i = 0; i < Food.allFood.Count; i++)
@@ -425,9 +422,6 @@ namespace AP_Project_4022
             return Comment.allcomments.Where(x=>x.id == id).FirstOrDefault();
         }
 
-        private void SigninButton_Click(object sender, RoutedEventArgs e)
-        {
-            singinPage sp = new singinPage();sp.Show(); 
-        }
+        
     }
 }
