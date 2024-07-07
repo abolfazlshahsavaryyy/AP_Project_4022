@@ -13,6 +13,7 @@ namespace AP_Project_4022.classes
         public Customer Customer { get; set; }
         public Comment AdminReply { get; set; }
         public Comment CustomerComment { get; set; }
+        public string title {  get; set; }
         public bool IsCheck { get; set; }
         public static List<Complaint> allComplaints { get; set; }
         static Complaint()

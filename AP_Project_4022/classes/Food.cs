@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.TextFormatting;
 using System.Xml.Linq;
 
 namespace AP_Project_4022.classes
 {
     public class Food
     {
+        public int id {  get; set; }
         public string name { get; set; }
         public double price { get; set; }
         public double aveagePoint { get; set; }
@@ -22,15 +24,16 @@ namespace AP_Project_4022.classes
         static Food()
         {
             allFood = new List<Food>();
-            allFood.Add(new Food("food",10,5,1,new List<Comment>(), "",new List<string>{ "material1","material2"}));
+            
         }
         public Food()
         {
 
         }
         //add caregory and complaint class and category enum
-        public Food(string name, double price, double aveagePoint, int numberFood, List<Comment> commentFood, string picturePath, List<string> foodRawMaterials)
+        public Food(int id,string name, double price, double aveagePoint, int numberFood, List<Comment> commentFood, string picturePath, List<string> foodRawMaterials)
         {
+            this.id = id;
             this.name = name;
             this.price = price;
             this.aveagePoint = aveagePoint;
@@ -49,7 +52,7 @@ namespace AP_Project_4022.classes
                     return;
                 }
             }
-            allFood.Add(new Food(name, price, 0, number, new List<Comment>(), string.Empty, foodRawMaterials));
+            allFood.Add(new Food(0,name, price, 0, number, new List<Comment>(), string.Empty, foodRawMaterials));
         }
         public static Food? GetFood(string name)
         {
