@@ -40,6 +40,8 @@ namespace AP_Project_4022.classes
         public RemoveFood remove_food { get; set; }
         public RestaurantPanel restaurant_panel { get; set; }
 
+        public RestaurantPages.Window1 remove_category {  get; set; }
+
         //################################################################################
         static Restaurant()
         {

@@ -36,6 +36,7 @@ namespace AP_Project_4022.RestaurantPages
             btnChangeStock.Visibility = Visibility.Hidden; 
             btnHistory.Visibility = Visibility.Hidden;
             stcChoose.Visibility = Visibility.Visible;
+            stcChoose2.Visibility = Visibility.Visible;
         }
 
         private void btnChangeStock_Click(object sender, RoutedEventArgs e)
@@ -122,6 +123,12 @@ namespace AP_Project_4022.RestaurantPages
             btnHistory.Visibility = Visibility.Visible;
             stcChoose.Visibility = Visibility.Hidden;
             Restaurant.currentRestaurant.remove_food.Show();
+        }
+
+        private void btnRemoveCategory_Click(object sender, RoutedEventArgs e)
+        {
+            Restaurant.currentRestaurant.remove_category = new Window1();
+            Restaurant.currentRestaurant.remove_category.Show();
         }
     }
 }
