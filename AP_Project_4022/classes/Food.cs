@@ -33,7 +33,7 @@ namespace AP_Project_4022.classes
         //add caregory and complaint class and category enum
         public Food(string name, double price, double aveagePoint, int numberFood, List<Comment> commentFood, string picturePath, List<string> foodRawMaterials)
         {
-            this.id = id;
+            this.Id = Id;
             this.name = name;
             this.price = price;
             this.aveagePoint = aveagePoint;
