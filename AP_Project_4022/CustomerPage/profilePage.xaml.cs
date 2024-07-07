@@ -126,7 +126,15 @@ namespace AP_Project_4022.CustomerPage
                 MessageBox.Show("no good format for email","Warrning",MessageBoxButton.OK,MessageBoxImage.Error);
                 return;
             }
-            Customer.currentCustomer.address=addrressTextBox.Text;
+            Customer.currentCustomer.address=addrressTextBox.Text.Trim();
+            
+            SqlConnection con =new  SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP_Project\AP_Project_4022\AP_Project_4022\db.mdf;Integrated Security=True;Connect Timeout=30");
+            con.Open();
+            string command = "UPDATE CustomerTable SET Email = '" + Customer.currentCustomer.email+ "', Address = '" + Customer.currentCustomer.address+ "' WHERE UserName='" + Customer.currentCustomer.username.Trim() + "'";
+            SqlCommand com= new SqlCommand(command, con);
+            com.ExecuteNonQuery();
+            con.Close();
+
             profilePage pp=new profilePage();
             this.Close();
             pp.Show();

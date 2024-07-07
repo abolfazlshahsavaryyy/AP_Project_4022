@@ -78,6 +78,14 @@ namespace AP_Project_4022.CustomerPage
             if (specialServicePage.check == 1)
             {
                 Customer.currentCustomer.SpecialService = CustomerSpecialService.Golden;
+
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP_Project\AP_Project_4022\AP_Project_4022\db.mdf;Integrated Security=True;Connect Timeout=30");
+                con.Open();
+                string command = "UPDATE CustomerTable SET CustomerSpecialService='"+ CustomerSpecialService.Golden.ToString() + "' WHERE UserName='" + Customer.currentCustomer.username + "'";
+                SqlCommand com = new SqlCommand(command, con);
+                com.BeginExecuteNonQuery();
+                con.Close();
+
                 specialServicePage.check = 0;
                 MessageBox.Show("Golden Customer");
                 this.Close(); return;
@@ -85,12 +93,28 @@ namespace AP_Project_4022.CustomerPage
             if (specialServicePage.check == 2)
             {
                 Customer.currentCustomer.SpecialService = CustomerSpecialService.Silver;
+
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP_Project\AP_Project_4022\AP_Project_4022\db.mdf;Integrated Security=True;Connect Timeout=30");
+                con.Open();
+                string command = "UPDATE CustomerTable SET CustomerSpecialService='" + CustomerSpecialService.Silver.ToString() + "' WHERE UserName='" + Customer.currentCustomer.username + "'";
+                SqlCommand com = new SqlCommand(command, con);
+                com.BeginExecuteNonQuery();
+                con.Close();
+
                 specialServicePage.check = 0;
                 MessageBox.Show("silver Customer"); this.Close(); return;
             }
             if (specialServicePage.check == 3)
             {
                 Customer.currentCustomer.SpecialService = CustomerSpecialService.Bronze;
+
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AP_Project\AP_Project_4022\AP_Project_4022\db.mdf;Integrated Security=True;Connect Timeout=30");
+                con.Open();
+                string command = "UPDATE CustomerTable SET CustomerSpecialService='" + CustomerSpecialService.Bronze.ToString() + "' WHERE UserName='" + Customer.currentCustomer.username + "'";
+                SqlCommand com = new SqlCommand(command, con);
+                com.BeginExecuteNonQuery();
+                con.Close();
+
                 specialServicePage.check = 0;
                 MessageBox.Show("bronze Customer"); this.Close();
                 return;
