@@ -27,7 +27,7 @@
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment ="Right" Visibility="Hidden" x:Name ="stcChoose" >
             <Button x:Name="btnEditFood" Width="70" Margin="10, 10, 0, 10" Height="40" Content="Edit Food" FontSize="15" Click="btnEditFood_Click" />
             <Button x:Name="btnAddFood" Width="70" Margin="10, 10, 0, 10" Height="40" Content="Add Food" FontSize="15" Click="btnAddFood_Click" />
-            <Button x:Name="btnRemoveFood" Width="70" Margin="10, 10, 0, 10" Height="40" Content="Remove Food" FontSize="15" Click="btnRemoveFood_Click" />
+            <Button x:Name="btnRemoveFood" Width="70" Margin="10, 10, 0, 10" Height="40" Content="Remove Food" FontSize="11" Click="btnRemoveFood_Click" />
         </StackPanel>
 
 
