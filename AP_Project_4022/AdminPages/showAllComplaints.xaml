@@ -12,8 +12,17 @@
             <RowDefinition Height="85*"/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="tbTitle" Text="All Compliants" FontSize="20" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <ListBox Grid.Row="1" Margin="10" x:Name="lstComplaints" FontSize="15">
-
-        </ListBox>
+        <ListView Grid.Row="1" Margin="10" x:Name="lstComplaints">
+            <ListView.View>
+                <GridView x:Name="grvComplaints" AllowsColumnReorder="true" ColumnHeaderToolTip="Restaurant">
+                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Path=ID}" />
+                    <GridViewColumn Header="Title" Width="100" DisplayMemberBinding="{Binding Path=Title}" />
+                    <GridViewColumn Header="Restaurant" Width="100" DisplayMemberBinding="{Binding Path=Restaurant}" />
+                    <GridViewColumn Header="Customer Username" Width="150" DisplayMemberBinding="{Binding Path=CUsername}" />
+                    <GridViewColumn Header="Checked" Width="100" DisplayMemberBinding="{Binding Path=Checked}" />
+                    <GridViewColumn Header="Customer Name" Width="100" DisplayMemberBinding="{Binding Path=CName}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

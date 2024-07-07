@@ -14,7 +14,7 @@
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="History" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="Gray" />
-        <TextBox Grid.Row="1" Margin="10, 20" Width="200" HorizontalAlignment="Left" x:Name="txtFilter"/>
+        <TextBox Grid.Row="1" Margin="10, 20" Width="200" HorizontalAlignment="Left" x:Name="txtFilter"  TextAlignment="Left" FontSize="15"/>
         <Button x:Name="btnFilter" Click="btnFilter_Click" Content="Filter" Grid.Row="1" Margin="220, 20" Width="100" HorizontalAlignment="Left"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="stcFilter" >
             <StackPanel Orientation="Vertical">
@@ -31,8 +31,20 @@
             </StackPanel>
 
         </StackPanel>
-        <ListBox Grid.Row="2" Margin="10">
-        </ListBox>
-        <Button Grid.Row="3" HorizontalAlignment="Right" Width="100" Height="50" VerticalAlignment="Top" Margin="10, 0" Content="Get Report" FontSize="15" />
+        <ListView Grid.Row="2" Margin="10" x:Name="lstHistory">
+            <ListView.View>
+                <GridView x:Name="grvHistory" AllowsColumnReorder="true" ColumnHeaderToolTip="History">
+                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Path=ID}" />
+                    <GridViewColumn Header="Customer Name" Width="100" DisplayMemberBinding="{Binding Path=CName}" />
+                    <GridViewColumn Header="Restaurant" Width="100" DisplayMemberBinding="{Binding Path=Restaurant}" />
+                    <GridViewColumn Header="Customer Phone" Width="150" DisplayMemberBinding="{Binding Path=CPhone}" />
+                    <GridViewColumn Header="Food ID" Width="100" DisplayMemberBinding="{Binding Path=Food}" />
+                    <GridViewColumn Header="Price" Width="100" DisplayMemberBinding="{Binding Path=Price}" />
+                    <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding Path=Type}" />
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Row="3"  x:Name="btnReport" HorizontalAlignment="Right" Width="100" Height="50" VerticalAlignment="Top" Margin="10, 0" Content="Get Report" FontSize="15" Click="Button_Click" />
     </Grid>
 </Window>

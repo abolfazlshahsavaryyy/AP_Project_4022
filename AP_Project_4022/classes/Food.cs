@@ -10,7 +10,7 @@ namespace AP_Project_4022.classes
 {
     public class Food
     {
-        public int id {  get; set; }
+        public int Id { get; set; }
         public string name { get; set; }
         public double price { get; set; }
         public double aveagePoint { get; set; }
@@ -24,14 +24,14 @@ namespace AP_Project_4022.classes
         static Food()
         {
             allFood = new List<Food>();
-            
+            allFood.Add(new Food("food",10,5,1,new List<Comment>(), "",new List<string>{ "material1","material2"}));
         }
         public Food()
         {
 
         }
         //add caregory and complaint class and category enum
-        public Food(int id,string name, double price, double aveagePoint, int numberFood, List<Comment> commentFood, string picturePath, List<string> foodRawMaterials)
+        public Food(string name, double price, double aveagePoint, int numberFood, List<Comment> commentFood, string picturePath, List<string> foodRawMaterials)
         {
             this.id = id;
             this.name = name;
@@ -52,18 +52,11 @@ namespace AP_Project_4022.classes
                     return;
                 }
             }
-            allFood.Add(new Food(0,name, price, 0, number, new List<Comment>(), string.Empty, foodRawMaterials));
+            allFood.Add(new Food(name, price, 0, number, new List<Comment>(), string.Empty, foodRawMaterials));
         }
         public static Food? GetFood(string name)
         {
-            for(int i = 0; i < allFood.Count; i++)
-            {
-                if (allFood[i].name == name)
-                {
-                    return allFood[i];
-                }
-            }
-            return null;
+            return allFood.Where(x=>x.name == name).FirstOrDefault();
         }
         public static bool IsFoodExists(string name)
         {

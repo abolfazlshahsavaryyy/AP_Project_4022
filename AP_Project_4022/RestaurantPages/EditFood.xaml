@@ -9,9 +9,11 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="30*"/>
-            <RowDefinition Height="30*"/>
-            <RowDefinition Height="30*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="18*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,14 +21,16 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="Edit Food" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="Gray" />
-        <TextBox x:Name="txtName" Grid.Row="1" Grid.Column="1" Margin="10, 40, 10, 40" />
-        <TextBlock x:Name="tbName" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Food Name:" FontSize="22" />
-        <Button x:Name="btnName" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Height="50" Content="Done" Click="btnName_Click" />
-        <TextBox x:Name="txtPrice" Grid.Row="2" Grid.Column="1" Margin="10, 40, 10, 40" Visibility="Hidden" />
+        <TextBox x:Name="txtId" Grid.Row="1" Grid.Column="1" Margin="10"  TextAlignment="Left" FontSize="15" />
+        <TextBlock x:Name="tbId" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="ID:" FontSize="22" />
+        <Button x:Name="btnId" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Height="50" Content="Done" Click="btnName_Click" />
+        <TextBox x:Name="txtPrice" Grid.Row="2" Grid.Column="1" Margin="10" Visibility="Hidden"  TextAlignment="Left" FontSize="15"/>
         <TextBlock x:Name="tbPrice" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Hidden" Text="Price:" FontSize="22" />
-        <TextBox x:Name="txtStock" Grid.Row="3" Grid.Column="1" Margin="10, 40, 10, 40" Visibility="Hidden"/>
-        <TextBlock x:Name="tbStock" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Hidden" Text="Stock:" FontSize="22" />
-        <Button x:Name="btnDone" Content="Done" Grid.Row="3" Grid.Column="2" Width="100" Height="50" Visibility="Hidden" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" Click="btnDone_Click"/>
+        <TextBox x:Name="txtCategory" Grid.Row="3" Grid.Column="1" Margin="10" Visibility="Hidden"  TextAlignment="Left" FontSize="15"/>
+        <TextBlock x:Name="tbCategory" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Hidden" Text="Category:" FontSize="22" />
+        <Button x:Name="btnDone" Content="Done" Grid.Row="5" Grid.Column="2" Width="100" Height="50" Visibility="Hidden" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" Click="btnDone_Click"/>
+        <TextBox x:Name="txtMatrials" Grid.Row="4" Grid.Column="1" Margin="10" Visibility="Hidden"  TextAlignment="Left" FontSize="15"/>
+        <TextBlock x:Name="tbMaterials" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Hidden" Text="Materials(seperate with ,):" FontSize="20" />
 
     </Grid>
 </Window>

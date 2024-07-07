@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using AP_Project_4022.AdminPages;
+using AP_Project_4022.classes;
+using AP_Project_4022.RestaurantPages;
+using Microsoft.Data.SqlClient;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -352,8 +356,16 @@ namespace AP_Project_4022
         public MainWindow()
         {
             InitializeComponent();
-            AdminPages.searchAmongRestaurants window1 = new AdminPages.searchAmongRestaurants();
-            window1.Show();
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SigninButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
