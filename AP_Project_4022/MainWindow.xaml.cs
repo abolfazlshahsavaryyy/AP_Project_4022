@@ -23,20 +23,11 @@ namespace AP_Project_4022
         public MainWindow()
         {
             InitializeComponent();
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\U\source\repos\AP_Project_4022\AP_Project_4022\database.mdf;Integrated Security=True;Connect Timeout=30");
-            con.Open();
-            string command;
-            command = "insert into AdminTable values('"+ "abolfazl" +"', '"+ 1383 +"')";
-            SqlCommand com = new SqlCommand(command, con);
-            com.BeginExecuteNonQuery();
-            con.Close();
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            Restaurant.currentRestaurant = new Restaurant("Sepehr", "555", "Isfahan", AdmissionType.dine_in, "Sepehr", 0, "Isf", 20);
-            Restaurant.currentRestaurant.restaurant_panel = new RestaurantPanel();
-            Restaurant.currentRestaurant.restaurant_panel.Show();
+
         }
 
         private void SigninButton_Click(object sender, RoutedEventArgs e)

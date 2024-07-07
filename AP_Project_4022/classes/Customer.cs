@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
-// using AP_Project_4022.CustomerPage;
+ using AP_Project_4022.CustomerPage;
 
 namespace AP_Project_4022.classes
 {
@@ -16,7 +16,7 @@ namespace AP_Project_4022.classes
     }
     public class Customer
     {
-      /*  public CustomerSpecialService? SpecialService { get; set; }
+        public CustomerSpecialService? SpecialService { get; set; }
         public string username {  get; set; }
         public string password { get; set; }
         public string firstName { get; set; }
@@ -98,6 +98,6 @@ namespace AP_Project_4022.classes
                 return CustomerSpecialService.Bronze;
             }
             return null;
-        }*/
+        }
     } 
 }
